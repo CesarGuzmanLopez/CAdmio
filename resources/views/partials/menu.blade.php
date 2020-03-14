@@ -17,8 +17,8 @@
 	<a href='{{ route("auth.change_password") }}'> 
 		<i	class="nav-icon fas fa-fw fa-key"> </i> Change password
 	</a>
-	<a href='{{url("/cerrarSesion")}}'> <i class="nav-icon fas fa-fw fa-sign-out-alt"> </i> Cerrar Sésion
-	
-	</a> 
+	<a href='{{url("/cerrarSesion")}}'> 
+		<i class="nav-icon fas fa-fw fa-sign-out-alt"> </i> Cerrar Sésion
+	</a>
 	@endcan {{--fin de Usuario --}}
 </div>
