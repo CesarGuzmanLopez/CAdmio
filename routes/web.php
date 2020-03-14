@@ -1,5 +1,6 @@
 <?php
 Route::get('/','PrincipalController@index');
+Route::get('cerrarSesion','PrincipalController@cerrarSesion');
 
 Auth::routes(['register' => false]);
 

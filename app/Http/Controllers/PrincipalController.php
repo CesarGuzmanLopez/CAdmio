@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Gate;
 
@@ -29,5 +30,11 @@ class PrincipalController extends Controller
   
     	return view('Principal')->with('title',"Cadmio");
     }
-  
+    public function cerrarSesion(){
+        //Desconctamos al usuario
+        \Auth::logout();
+        
+        return redirect('/');
+        
+    }
 }

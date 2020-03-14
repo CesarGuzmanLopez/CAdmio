@@ -23,7 +23,7 @@ Vue.use(FreeTransform);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
- 
+
  
 var menu = new Vue({
     el: '#Menu'
@@ -38,4 +38,5 @@ if($("#AUX").length!=0)
 app = new Vue({
     el: '#AUX'
 });
+
  
