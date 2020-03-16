@@ -21,7 +21,8 @@ class respuestas extends Model
      * @var string
      */
     protected $primaryKey = 'ID_Respuesta';
-
+    public $incrementing = true;
+    
     /**
      * @var array
      */

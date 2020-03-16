@@ -334,9 +334,4 @@ import FreeTransform from "vue-free-transform";
 }
 
 
-
-
-
-
-
 </style>

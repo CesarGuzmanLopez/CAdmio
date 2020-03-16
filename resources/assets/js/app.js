@@ -13,6 +13,7 @@ global.$ = global.jQuery = require('jquery');
 import 'jquery-ui/ui/widgets/datepicker.js';
 require('./bootstrap');
 import BootstrapVue from 'bootstrap-vue'
+
 //import * as uiv from 'uiv'
 window.Vue = require('vue');
 Vue.use(BootstrapVue);
@@ -39,4 +40,4 @@ app = new Vue({
     el: '#AUX'
 });
 
- 
+require('./Cuestionarios');

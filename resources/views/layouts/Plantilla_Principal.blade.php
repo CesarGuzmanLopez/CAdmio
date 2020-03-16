@@ -2,8 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <html lang="es">
     <head>
-      <title>{{$title??"Cadmio"}}</title><!-- Meta Etiquetas  -->
-   
+      <title>{{$title??"Cadmio"}}</title><!-- Meta Etiquetas  --> 
       <meta name="author" content="Cesar Gerardo ,CesarGuzman@ieee.org">
       <meta name="copyright" content="Cesar Gerardo Guzman Lopez"><link rel="icon"  href="{{asset($icon ?? '') }}">        <meta name="robots" content="index, follow" />
       <meta name="language" content="es"><meta name="generator" content="Eclipse"><meta http-equiv="X-UA-Compatible" content="IE=edge"><base target ="_self">
@@ -32,7 +31,7 @@
     </div>
    </footer>
    @show
-    <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".0"?>"></script>
+    <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".1"?>"></script>
 @yield('scripts')
    </body>
 </html>

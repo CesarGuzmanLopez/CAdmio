@@ -21,7 +21,8 @@ class retro_infos extends Model
      * @var string
      */
     protected $primaryKey = 'ID_Retro';
-
+    public $incrementing = true;
+    
     /**
      * @var array
      */

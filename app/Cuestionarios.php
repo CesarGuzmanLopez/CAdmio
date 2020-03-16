@@ -21,7 +21,8 @@ class Cuestionarios extends Model
      * @var string
      */
     protected $primaryKey = 'ID_Cuestionario';
-
+    public $incrementing = true;
+    
     /**
      * @var array
      */

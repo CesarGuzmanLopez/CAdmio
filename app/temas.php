@@ -23,7 +23,7 @@ class temas extends Model
      * @var string
      */
     protected $primaryKey = 'ID_Tema';
-
+    public $incrementing = true;
     /**
      * @var array
      */

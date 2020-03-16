@@ -20,7 +20,7 @@ class tipo_resps extends Model
      * @var string
      */
     protected $primaryKey = 'ID_TipoRespuesta';
-
+    public $incrementing = true;
     /**
      * @var array
      */

@@ -15,11 +15,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class cuestionario_preguntas extends Model
 {
-    public $timestamps = false;
     /**
      * @var array
      */
-    protected $fillable = ['ID_Cuestionario', 'ID_Pregunta', 'Porcentaje', 'Recurso', 'ID_NumPegunta'];
+    public $timestamps = false;
+    
+    protected $fillable = ['Porcentaje', 'Recurso'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

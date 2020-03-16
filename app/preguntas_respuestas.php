@@ -14,9 +14,11 @@ use Illuminate\Database\Eloquent\Model;
 class preguntas_respuestas extends Model
 {
     public $timestamps = false;
+    
     /**
      * @var array
      */
+    
     protected $fillable = ['ID_Pregunta', 'ID_Respuesta', 'Numero'];
 
     /**

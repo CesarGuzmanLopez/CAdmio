@@ -26,10 +26,10 @@ class PrincipalController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-  
+    { 
     	return view('Principal')->with('title',"Cadmio");
     }
+
     public function cerrarSesion(){
         //Desconctamos al usuario
         \Auth::logout();

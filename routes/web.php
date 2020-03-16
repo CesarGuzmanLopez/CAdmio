@@ -2,9 +2,7 @@
 Route::get('/','PrincipalController@index');
 Route::get('cerrarSesion','PrincipalController@cerrarSesion');
 
-Auth::routes(['register' => false]);
-
-// Change Password Routes...
+Auth::routes(['register' => false]);  
 
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
@@ -16,4 +14,45 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], 
     Route::delete('roles_mass_destroy', 'Admin\RolesController@massDestroy')->name('roles.mass_destroy');
     Route::resource('users', 'Admin\UsersController');
     Route::delete('users_mass_destroy', 'Admin\UsersController@massDestroy')->name('users.mass_destroy');
+});
+
+Route::prefix('SisPreg')->group(function () {
+    Route::get('CrearPregunta','SistemaPreguntas\CuestionariosController@CrearPreguntas'); 
+    Route::get('/','SistemaPreguntas\CuestionariosController@index'); 
+    
+    Route::get('Add','SistemaPreguntas\CuestionariosController@Add'); 
+   
+    
+    Route::get('ObtenerTemas','SistemaPreguntas\CuestionariosController@ObtenerTemas');
+    Route::post('Add_Tema','SistemaPreguntas\CuestionariosController@Add_Tema'); 
+    Route::post('Cambiar_Tema','SistemaPreguntas\CuestionariosController@Cambiar_Tema');
+    Route::post('Eliminar_Tema','SistemaPreguntas\CuestionariosController@Eliminar_Tema'); 
+   
+    
+    Route::get('ObtenerCuestionario','SistemaPreguntas\CuestionariosController@ObtenerCuestionario');
+    Route::post('Add_Cuestionario','SistemaPreguntas\CuestionariosController@Add_Cuestionario'); 
+    Route::post('Cambiar_Cuestionario','SistemaPreguntas\CuestionariosController@Cambiar_Cuestionario');
+    Route::post('Eliminar_Cuestionario','SistemaPreguntas\CuestionariosController@Eliminar_Cuestionario');
+    
+    
+    Route::get('ObtenerExamen','SistemaPreguntas\CuestionariosController@ObtenerExamen');
+    Route::post('Add_Examen','SistemaPreguntas\CuestionariosController@Add_Examen');
+    Route::post('Cambiar_Examen','SistemaPreguntas\CuestionariosController@Cambiar_Examen');
+    Route::post('Eliminar_Examen','SistemaPreguntas\CuestionariosController@Eliminar_Examen');
+    
+    Route::get('Obtenertipo_resps','SistemaPreguntas\CuestionariosController@Obtenertipo_resps');
+    Route::post('Add_tipo_resps','SistemaPreguntas\CuestionariosController@Add_tipo_resps');
+    Route::post('Cambiar_tipo_resps','SistemaPreguntas\CuestionariosController@Cambiar_tipo_resps');
+    Route::post('Eliminar_tipo_resps','SistemaPreguntas\CuestionariosController@Eliminar_tipo_resps');
+    
+  
+    
+    
+    Route::get('ObtenerRespuesta','SistemaPreguntas\CuestionariosController@ObtenerRespuesta');
+    Route::post('Cambiar_Respuesta','SistemaPreguntas\CuestionariosController@Cambiar_Respuesta');
+    Route::post('Eliminar_Respuesta','SistemaPreguntas\CuestionariosController@Eliminar_Respuesta');
+  
+    Route::get('CrearPresentacion','SistemaPreguntas\CuestionariosController@Crear_Cuestionario');
+    Route::get('GetPreguntas','SistemaPreguntas\CuestionariosController@GetPreguntas');
+    
 });

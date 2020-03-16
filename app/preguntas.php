@@ -29,7 +29,8 @@ class preguntas extends Model
      * @var string
      */
     protected $primaryKey = 'ID_Pregunta';
-
+    public $incrementing = true;
+    
     /**
      * @var array
      */
