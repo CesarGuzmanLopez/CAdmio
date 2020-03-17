@@ -9,6 +9,7 @@
 	<div id="Animacion" > 
 	   <div id="Presentacion" class="col-12 p-0 shadow-lg" >
 	    
+	    
 	    <b-carousel
 	      ref="Presentacion"
 	      id="presen"
