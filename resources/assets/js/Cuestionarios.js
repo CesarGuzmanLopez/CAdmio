@@ -97,9 +97,41 @@ if($("#Preguntas").length!=0)
 	   
 	        	this.totalRows = this.items.length; 
 	        	
-	        	console.log(this.items);
 	        }); 
 	        
 	       
 	    },
 	});
+
+if($("#Crear_Respuestas").length!=0)  
+	app = new Vue({
+	    el: '#Crear_Respuestas',
+	    components:{
+	    	
+	    },
+		data() {
+	   	 return {
+ 	         todo: [],
+ 	         items:[],
+	     }
+	    },
+	    beforeMount () {
+	        this.id= this.$el.attributes['ID_Pregunta'].value;
+	    
+	    },
+	    mounted() {
+	        this.totalRows = this.items.length
+	        axios.get('/SisPreg/GetRespuestas?ID_Pregunta='+this.id).then(response =>{
+	        	this.items = response.data;
+	        	todo = this.todo;
+	            this.isBusy= false;
+	        	this.totalRows = this.items.length; 
+	      
+	        });       
+	    },
+	});
+
+
+
+
+

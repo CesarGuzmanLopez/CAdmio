@@ -10,17 +10,30 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $Porcentaje
  * @property string $Recurso
  * @property int $ID_NumPegunta
+ * @property int $ID_Relacion_Pregunta_Cues
  * @property Cuestionario $cuestionario
  * @property Pregunta $pregunta
  */
 class cuestionario_preguntas extends Model
 {
     /**
-     * @var array
+     * The primary key for the model.
+     * 
+     * @var string
      */
     public $timestamps = false;
     
-    protected $fillable = ['Porcentaje', 'Recurso'];
+    /**
+     * @var array
+     */
+    public $incrementing = true;
+    
+    protected $primaryKey = 'ID_Relacion_Pregunta_Cues';
+
+    /**
+     * @var array
+     */
+    protected $fillable = ['ID_Cuestionario', 'ID_Pregunta', 'Porcentaje', 'Recurso', 'ID_NumPegunta'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

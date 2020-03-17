@@ -21,14 +21,12 @@ Route::prefix('SisPreg')->group(function () {
     Route::get('/','SistemaPreguntas\CuestionariosController@index'); 
     
     Route::get('Add','SistemaPreguntas\CuestionariosController@Add'); 
-   
     
     Route::get('ObtenerTemas','SistemaPreguntas\CuestionariosController@ObtenerTemas');
     Route::post('Add_Tema','SistemaPreguntas\CuestionariosController@Add_Tema'); 
     Route::post('Cambiar_Tema','SistemaPreguntas\CuestionariosController@Cambiar_Tema');
     Route::post('Eliminar_Tema','SistemaPreguntas\CuestionariosController@Eliminar_Tema'); 
    
-    
     Route::get('ObtenerCuestionario','SistemaPreguntas\CuestionariosController@ObtenerCuestionario');
     Route::post('Add_Cuestionario','SistemaPreguntas\CuestionariosController@Add_Cuestionario'); 
     Route::post('Cambiar_Cuestionario','SistemaPreguntas\CuestionariosController@Cambiar_Cuestionario');
@@ -44,15 +42,29 @@ Route::prefix('SisPreg')->group(function () {
     Route::post('Add_tipo_resps','SistemaPreguntas\CuestionariosController@Add_tipo_resps');
     Route::post('Cambiar_tipo_resps','SistemaPreguntas\CuestionariosController@Cambiar_tipo_resps');
     Route::post('Eliminar_tipo_resps','SistemaPreguntas\CuestionariosController@Eliminar_tipo_resps');
-    
-  
-    
-    
+   
     Route::get('ObtenerRespuesta','SistemaPreguntas\CuestionariosController@ObtenerRespuesta');
     Route::post('Cambiar_Respuesta','SistemaPreguntas\CuestionariosController@Cambiar_Respuesta');
     Route::post('Eliminar_Respuesta','SistemaPreguntas\CuestionariosController@Eliminar_Respuesta');
-  
+   
+    Route::post('AddPreguntaTodo','SistemaPreguntas\CuestionariosController@AddPreguntaTodo');
+    Route::post('ElimnarRelacionPregunta','SistemaPreguntas\CuestionariosController@ElimnarRelacionPregunta');
+    Route::post('ElimnarRelacionRespuesta','SistemaPreguntas\CuestionariosController@ElimnarRelacionRespuesta');
+    
+    Route::post('AddRespuestaTodo','SistemaPreguntas\CuestionariosController@AddRespuestaTodo');
+    
+    
+    
     Route::get('CrearPresentacion','SistemaPreguntas\CuestionariosController@Crear_Cuestionario');
     Route::get('GetPreguntas','SistemaPreguntas\CuestionariosController@GetPreguntas');
+    Route::get('GetRespuestas','SistemaPreguntas\CuestionariosController@GetRespuestas');
     
+    Route::get('Crear_Respuestas','SistemaPreguntas\CuestionariosController@Crear_Respuestas');
+    
+    //añadir recurso
+    Route::post('SubirRecurso','SistemaPreguntas\CuestionariosController@SubirRecurso');
+    
+
+
+
 });
