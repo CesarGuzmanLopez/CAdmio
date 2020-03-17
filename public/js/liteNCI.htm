@@ -20,8 +20,8 @@ var Info;
 
 
 Info = {
-	width: 500,
-	height: 500,
+	width: 300,
+	height: 300,
 	debug: false,
 	color: "0xC0C0C0",
 	addSelectionOptions: true,
@@ -38,7 +38,7 @@ Info = {
     spinRateX: 0.2,
     spinRateY: 0.5,
     spinFPS: 20,
-    spin:true,
+    spin:false,
     debug: false
 }
 
@@ -49,13 +49,11 @@ Info = {
 </script>
 </head>
 <body>
-<a href="javascript:jmol.spin(true)">spin ON</a> <a href="javascript:jmol.spin(false)">spin OFF</a>
-<br>
+
 
 <script>
 
 Jmol.getTMApplet("jmol", Info)
-
 </script>
 
 </body>

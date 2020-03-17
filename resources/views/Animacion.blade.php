@@ -1,7 +1,7 @@
 @extends('layouts.Plantilla_Principal')
 @section('content') 
 @can('Usuario')
-	<a href="{{url('js/liteNCI.htm')}}">un link a presentacion</a>
+
 	 
         
 <div  class="container-fluid pb-5" >
@@ -22,9 +22,12 @@
 	      img-height="480" 
 	      @sliding-start="onSlideStart"
 	      @sliding-end="onSlideEnd"
+	      
 	    > 
-	      <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
-			<iframe src="{{url('js/liteNCI.htm')}}" width="1024" height="480" ></iframe>
+	      <b-carousel-slide 
+	      
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+			<iframe frameBorder="0" src="{{url('js/liteNCI.htm')}}" width="1024" height="480" ></iframe>
 	      </b-carousel-slide>
 	     
 	         <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
