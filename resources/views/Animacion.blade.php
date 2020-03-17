@@ -3,10 +3,10 @@
 @can('Usuario')
 
 	 
-        
-<div  class="container-fluid pb-5" >
+ 
+<div  class="container-fluid pb-5 justify-content-center" >
 
-	<div id="Animacion" > 
+	<div id="Animacion"  class="container col-9 "> 
 	
 	   <div id="Presentacion" class="col-12 p-0 shadow-lg" >
 	    
@@ -17,7 +17,7 @@
 	      v-model="slide"
 	      :interval="0"
 		  :no-touch="true" 
-		  background="#ababab"
+		  background="#d9d098"
 	      img-width="1024"
 	      img-height="480" 
 	      @sliding-start="onSlideStart"
@@ -27,7 +27,7 @@
 	      <b-carousel-slide 
 	      
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
-			<iframe frameBorder="0" src="{{url('js/liteNCI.htm')}}" width="1024" height="480" ></iframe>
+			<iframe frameBorder="0" src="{{url('js/liteNCI2.htm')}}" width="500" height="480" ></iframe>
 	      </b-carousel-slide>
 	     
 	         <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
@@ -140,13 +140,13 @@
 	</div>
 	
 
-      <div id="Preguntas" ID_Cuestionario="{{$Cuestionario->ID_Cuestionario}}" class="pb-5">
+      <!-- div id="Preguntas" ID_Cuestionario="{{$Cuestionario->ID_Cuestionario}}" class="pb-5">
             <div class="row">
             	<div class="col-11">	
             		<b-table striped hover :items="items"> </b-table>
             	</div>
             </div>
-        </div>
+        </div-->
 
 
 </div>
