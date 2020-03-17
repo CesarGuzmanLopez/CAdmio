@@ -1,12 +1,13 @@
 @extends('layouts.Plantilla_Principal')
 @section('content') 
 @can('Usuario')
-	<a href="{{url('js/jsmol/liteNCI.htm')}}">un link a presentacion</a>
-	
+	<a href="{{url('js/liteNCI.htm')}}">un link a presentacion</a>
+	 
         
 <div  class="container-fluid pb-5" >
 
 	<div id="Animacion" > 
+	
 	   <div id="Presentacion" class="col-12 p-0 shadow-lg" >
 	    
 	    
@@ -22,6 +23,10 @@
 	      @sliding-start="onSlideStart"
 	      @sliding-end="onSlideEnd"
 	    > 
+	      <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+			<iframe src="{{url('js/liteNCI.htm')}}" width="1024" height="480" ></iframe>
+	      </b-carousel-slide>
+	     
 	         <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 	     		<div>
 	     		Las fuerzas intramoleculares mantienen juntos a los
@@ -75,7 +80,6 @@
 	     
 	      </b-carousel-slide>
 	
-	     
 	      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
 	      <b-carousel-slide>
 	        <template v-slot:img>
@@ -145,4 +149,63 @@
 </div>
 
 @endcan
+
 @endsection
+@section('scripts')
+    @parent
+<script type="text/javascript">
+
+
+;(function() {
+
+// ?_USE=JAVA   ?_USE=SIGNED   ?_USE=HTML5
+
+// Developers: The _debugCode flag is checked in j2s/java/core.z.js, 
+// and, if TRUE, skips loading the core methods, forcing those
+// to be read from their individual directories. Set this
+// true if you want to do some code debugging by inserting
+// System.out.println(x), document.title=x, or alert(x) 
+// anywhere in the Java or Jmol code.
+
+var s = document.location.search;
+Jmol._debugCode = (s.indexOf("debugcode") >= 0);
+
+jmol_isReady = function(applet) {
+	document.title = (applet._id + " is ready")
+	Jmol._getElement(applet, "appletdiv").style.border="1px solid blue"
+ 
+}		
+
+InfoA = {
+	width: "100%",
+	height: "100%",
+	debug: false,
+	color: "white",
+	addSelectionOptions: false,
+	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
+	use: "HTML5",
+  coverImage: "",//"data/1hxw.png",        // initial image instead of applet
+  coverScript: "",	// special script for click of cover image (otherwise equal to script)
+  deferApplet: false,                  // wait to load applet until click
+  deferUncover: false,                 // wait to uncover applet until script completed
+  jarPath: "java",
+	j2sPath: "j2s",
+	jarFile: "JmolApplet.jar",
+	isSigned: false,
+	//disableJ2SLoadMonitor: true,
+	//disableInitialConsole: true,
+	readyFunction: jmol_isReady,
+	//defaultModel: "$dopamine",
+	script: "load data/caffeine.mol;"
+}
+
+
+})();
+
+$(document).ready(function(){
+  $("#appletplace1").html(Jmol.getAppletHtml("jmol1", InfoA));
+});
+
+</script>
+@endsection
+   
