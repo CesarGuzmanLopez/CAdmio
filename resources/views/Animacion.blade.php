@@ -1,7 +1,7 @@
 @extends('layouts.Plantilla_Principal')
 @section('content') 
 @can('Usuario')
-	<a href="{{url('js/jsmol/jsv_mol.htm')}}">un link a presentacion</a>
+	<a href="{{url('js/jsmol/liteNCI.htm')}}">un link a presentacion</a>
 	
         
 <div  class="container-fluid pb-5" >
