@@ -6,13 +6,25 @@
  */
 
 import $ from 'jquery';
+import JSmolWidget from 'jsmol-widget';
 import FreeTransform from 'vue-free-transform';
 window.$ = window.jQuery = $;
 
+window.FreeTransform=FreeTransform;
+
+
+
 global.$ = global.jQuery = require('jquery');
+
+
+ 
 import 'jquery-ui/ui/widgets/datepicker.js';
 require('./bootstrap');
+
+
+
 import BootstrapVue from 'bootstrap-vue'
+
 
 //import * as uiv from 'uiv'
 window.Vue = require('vue');
@@ -25,19 +37,29 @@ Vue.use(FreeTransform);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const viewer = new JSmolWidget('viewer', '<PATH_TO_JSMOL>/j2s');
+    viewer.load('<some data>')
+});
+
+
 var menu = new Vue({
     el: '#Menu'
 });
  
-var app ;
 
 Vue.component('Ani1', require('./components/Animacion/ani1.vue').default);
 
 
+
 if($("#AUX").length!=0)  
 app = new Vue({
+	
     el: '#AUX'
 });
 
+
+
+require('./Animacion');
 require('./Cuestionarios');

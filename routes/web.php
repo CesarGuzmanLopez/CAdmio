@@ -1,5 +1,9 @@
 <?php
-Route::get('/','PrincipalController@index');
+Route::get('/','SistemaPreguntas\CuestionariosController@ListaCustionarios');
+Route::get('/Animacion','SistemaPreguntas\CuestionariosController@Animacion');
+
+Route::get('/ani','PrincipalController@index');
+
 Route::get('cerrarSesion','PrincipalController@cerrarSesion');
 
 Auth::routes(['register' => false]);  

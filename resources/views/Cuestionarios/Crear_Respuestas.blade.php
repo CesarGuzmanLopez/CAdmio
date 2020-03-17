@@ -116,8 +116,8 @@
   </div>
   @break
 @case("Texto Con Pregunta")
-	
-  @break
+		
+@break
 @case("Texto")
 	
 

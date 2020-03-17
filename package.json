@@ -20,11 +20,14 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "3dmol": "^1.5.1",
         "@fortawesome/fontawesome-free": "^5.12.1",
         "bootstrap": "^4.4.1",
         "bootstrap-vue": "^2.7.0",
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
+        "jsmol-widget": "^0.7.0",
+        "miew": "^0.8.7",
         "vue": "^2.6.11",
         "vue-free-transform": "^1.0.11"
     }

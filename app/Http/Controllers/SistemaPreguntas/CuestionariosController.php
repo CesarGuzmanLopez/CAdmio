@@ -26,7 +26,16 @@ class CuestionariosController extends Controller{
         return view('Cuestionarios.Principal')->with("Cuestionarios",$this->ObtenerCuestionario());
     }
     Public function Add(){
-        return  view('Cuestionarios.Add');
+        return  view('Cuestionarios.Add')->with("Cuestionarios",$this->ObtenerCuestionario());;
+    }
+    
+    public function ListaCustionarios(){
+        
+        return view("ListaCuestionarios")->with("Cuestionarios",$this->ObtenerCuestionario());
+    }
+    public function Animacion(Request $request){
+        return view("Animacion")
+        ->with("Cuestionario", $this->obtenerCuestionarioID($request));
     }
     public function Crear_Respuestas(Request $request){
         
@@ -249,7 +258,7 @@ class CuestionariosController extends Controller{
     }
     
     public function GetRespuestas(Request $request){
-        if($this->authorize('Editar Cuestionarios') && $request->has('ID_Pregunta')){
+        if($this->authorize('Usuario') && $request->has('ID_Pregunta')){
             return preguntas_respuestas::join('respuestas','respuestas.ID_Respuesta','=','preguntas_respuestas.ID_Respuesta')
             ->where("ID_Pregunta","=",$request->ID_Pregunta)
             ->get();
