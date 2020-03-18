@@ -94,13 +94,23 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 	   	</div>
 	  </b-carousel-slide>
 	  
+	  
+	  
+	  <!-- Pregunta de Imagen -->
 	     
-	      <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
-	      <div class="container-fluid">
-			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
-	      </div>
+	      <b-carousel-slide caption="Completa el mapa conceptual a partir de los esquemas que se proponen" img-blank img-alt="Blank image" class="p-0">
+	      	<div class="container-fluid p-0 m-0">
+				
+					<b-img src="./anim/1/Cuestionario.png" width="850px"></b-img>
+				<div class="col-12 bg-white text-left" style=" color: black !important ">
+				<input />	
+				<input />	
+				<input />	
+				<input />	
+				
+				</div>
+			</div>
 	      </b-carousel-slide>
-	
 	    <b-carousel-slide 
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 
@@ -125,13 +135,7 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=c1c(c(cc(c1O)O)O)CCN')}}" class="container" height="480px"></iframe>
 	</div>
-	      </b-carousel-slide>
-
-	
-	
-	
-	
-	     	   
+	      </b-carousel-slide> 
 	  		  <b-carousel-slide caption="Líquido iónico en un nanotubo" img-blank img-alt="Blank image">
                <video width="750"   autoplay loop>
                   		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
@@ -161,31 +165,9 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 				</div>
 	      </b-carousel-slide>
 	      <!-- Slides with custom text -->
-	      
-	      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54"  img-alt="Blank image">
-	     
-	     
-	     
-	     
-	      </b-carousel-slide>
 	
-	      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-	      <b-carousel-slide>
-	        <template v-slot:img>
-	          <img
-	            class="d-block img-fluid w-100"
-	            width="1024"
-	            height="480"
-	            src="https://picsum.photos/1024/480/?image=55"
-	            alt="image slot"
-	          >
-	        </template>
-	      </b-carousel-slide> 
 	      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-	     
-	    </b-carousel>
-
-
+	    </b-carousel> 
 
 	</div> 
 
