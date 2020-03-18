@@ -1,8 +1,10 @@
 <div id="Menu"> 
 	@can('Usuario')
+	@cannot('Invitado')
 	<a href='{{ route("admin.home") }}'> 
 		<i class="nav-icon fas fa-fw fa-tachometer-alt"> </i> {{ trans('global.dashboard') }}
 	</a> 
+	@endcannot
 	@can('users_manage')
 	 <a href='{{ route("admin.permissions.index") }}'> 
 	 	<i class="fa-fw fas fa-unlock-alt nav-icon"> </i> {{trans('cruds.permission.title') }}
