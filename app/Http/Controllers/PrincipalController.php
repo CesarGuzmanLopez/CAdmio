@@ -29,10 +29,23 @@ class PrincipalController extends Controller
     { 
     	return view('Principal')->with('title',"Cadmio");
     }
-    public function Animate(){
-  
-        return view('JSmol.1');
+    public function Animate(Request $request){
         
+        $width =100;
+        $height=100;
+        $color="#00000000";
+        $smile="cc";
+        if($request->has("width"))
+            $width=$request->width;
+        if($request->has("height"))
+            $height=$request->height;
+        if($request->has("color"))
+            $color=$request->color;
+        if($request->has("smile"))
+            $smile=$request->smile;
+        return view('JSmol.1')->    
+        with("width","$width")->with("height",$height)->with("color","$color")->with("smile","$smile");
+      
     }
     public function cerrarSesion(){
         //Desconctamos al usuario

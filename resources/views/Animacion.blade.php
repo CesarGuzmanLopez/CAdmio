@@ -17,25 +17,72 @@
 	      v-model="slide"
 	      :interval="0"
 		  :no-touch="true" 
-		  background="#d9d098"
+		  background="#000000"
 	      img-width="1024"
 	      img-height="480" 
 	      @sliding-start="onSlideStart"
 	      @sliding-end="onSlideEnd"
 	      
 	    > 
+	         <b-carousel-slide caption="" img-blank img-alt="Blank image">
+	     		<div class="bg-white text-black pt-5" style="color: black !important; height:1280px !important; font-size: 40px;"  >
+	     			Proyecto Talio
+	     		</div>
+	     	
+			</b-carousel-slide>
 	      <b-carousel-slide 
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 
 
-			<iframe style="border: 0px;" src="{{url('Animate')}}" class="container" height="480px"></iframe>
+			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
 	      
 	      
 	      
 	      </b-carousel-slide>
+	
+	    <b-carousel-slide 
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+
+
+			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=600&height=500&smile=_')}}" class="container" height="580px"></iframe>
+	      
+	      
+	      
+	      </b-carousel-slide>
+	    <b-carousel-slide 
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+
+
+			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=Oc1ccc(cc1O)CCN')}}" class="container" height="480px"></iframe>
+	      
+	      
+	      
+	      </b-carousel-slide>
+	    <b-carousel-slide 
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+
+
+			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=c1c(c(cc(c1O)O)O)CCN')}}" class="container" height="480px"></iframe>
+	      
+	      
+	      
+	      </b-carousel-slide>
+	    <b-carousel-slide 
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+
+
+			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
+	      
+	      
+	      
+	      </b-carousel-slide>
+	
+	
+	
+	
 	     	   
 	  		  <b-carousel-slide caption="cohesion" img-blank img-alt="Blank image">
-               <video width="560" height="340"  autoplay loop>
+               <video width="1024" height="480"  autoplay loop>
                   		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
                 </video>
 	  	</b-carousel-slide>

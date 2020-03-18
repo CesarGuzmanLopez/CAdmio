@@ -10,16 +10,19 @@
 
 Info = {
 	use: "HTML5",
-	width: 555,
-	height: 300,
+	width: {{$width}},
+	height: {{$height}},
 	debug: false,
-	color: "0xC0C0C0",
+	color: "#{{$color}}",
   disableJ2SLoadMonitor: true,
   disableInitialConsole: true,
 //	addSelectionOptions: true,
 	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
-
-	script: "set zoomLarge falase; load $cc"
+	@if($smile!="_")
+	script: "set zoomLarge falase; load ${{$smile}}"
+	@else
+		script: "set zoomLarge falase; load data/1crn.pdb; cartoon on;color cartoon structure"
+	@endif
 }
 
 
