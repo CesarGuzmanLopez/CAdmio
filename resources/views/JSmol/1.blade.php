@@ -13,6 +13,7 @@ Info = {
 	width: {{$width}},
 	height: {{$height}},
 	debug: false,
+	 zoomScaling: 12,
 	color: "#{{$color}}",
   disableJ2SLoadMonitor: true,
   disableInitialConsole: true,

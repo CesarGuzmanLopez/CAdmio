@@ -6,7 +6,7 @@
  
 <div  class="container-fluid pb-5 justify-content-center" >
 
-	<div id="Animacion"  class="container col-9 "> 
+	<div id="Animacion"  class="container col-10 "> 
 	
 	   <div id="Presentacion" class="col-12 p-0 shadow-lg" >
 	    
@@ -14,9 +14,10 @@
 	    <b-carousel
 	      ref="Presentacion"
 	      id="presen"
+	    
 	      v-model="slide"
 	      :interval="0"
-		  :no-touch="true" 
+		  :no-touch="false" 
 		  background="#000000"
 	      img-width="1024"
 	      img-height="480" 
@@ -24,19 +25,50 @@
 	      @sliding-end="onSlideEnd"
 	      
 	    > 
-	         <b-carousel-slide caption="" img-blank img-alt="Blank image">
-	     		<div class="bg-white text-black pt-5" style="color: black !important; height:1280px !important; font-size: 40px;"  >
-	     			Proyecto Talio
+	       <b-carousel-slide caption="" img-blank img-alt="Blank image">
+	     		<div class="continer-fluid p-0 m-0">
+	     		<b-img src="./anim/1/Pren.jpg" fluid alt=" "></b-img>  
+	     			
+	     		
 	     		</div>
 	     	
 			</b-carousel-slide>
 	      <b-carousel-slide 
-	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image" class="bg-white text-black">
+	      <div style="font-size: 20px !important; color: black !important;" >
+			Las fuerzas intramoleculares se refieren al enlace químico (iónico o covalente), mantienen a los átomos de una molécula juntos y son responsables de su estabilización.
 
 
+			<div class="row container-fluid p-0 m-0" >
+		
+			<div class="col-6  justify-content-center text-center ">			
+			<iframe style="border: 0px;     overflow:hidden; " scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=O&color=ffffff')}}" class="container" height="310px"></iframe>
+		     	
+	      	La molécula de agua tiene dos enlaces covalentes.
+	      	</div>
+	      <div class="col-6  justify-content-center text-center">	
+	      		<iframe style="border: 0px;     "scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=N&color=ffffff')}}" class="container" height="310px"></iframe>
+	      		La molécula de amoníaco (NH3) tiene tres enlaces.
+	      </div>
+	      </div>
+	   	</div>
+	      </b-carousel-slide> 
+	            <b-carousel-slide   img-blank img-alt="Blank image" class="bg-white text-black"  >
+             <div style="font-size: 20px !important; color: black !important;" >
+            	Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre moléculas y las mantienen cohesionadas.
+    			<div class="row container-fluid justify-content-center text-center p-0 m-0" >
+    				<div class="col-8  justify-content-center text-center ">			
+    				<b-img src="./anim/1/Fuerzas_inter.png" fluid></b-img>
+    	    	  </div>
+            	</div>
+            	<div>
+            	Estas fuerzas son las principales responsables de las propiedades macroscópicas de la materia como el estado de agregación, los puntos de fusión y ebullición, la solubilidad, la tensión superficial y la densidad, entre otros.
+            	</div>
+            </div>
+			</b-carousel-slide>
+	     
+	      <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
-	      
-	      
 	      
 	      </b-carousel-slide>
 	
@@ -73,8 +105,7 @@
 
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
 	      
-	      
-	      
+	  
 	      </b-carousel-slide>
 	
 	
