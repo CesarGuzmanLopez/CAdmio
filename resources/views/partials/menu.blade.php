@@ -14,11 +14,15 @@
 	 	<i	class="fa-fw fas fa-user nav-icon"> </i> {{ trans('cruds.user.title')}}
 	</a> 
 	@endcan {{--fin de user manager --}}
+	@endcannot('Invitado')
 	<a href='{{ route("auth.change_password") }}'> 
 		<i	class="nav-icon fas fa-fw fa-key"> </i> Change password
 	</a>
+		@endcannot
+	
 	<a href='{{url("/cerrarSesion")}}'> 
 		<i class="nav-icon fas fa-fw fa-sign-out-alt"> </i> Cerrar Sésion
 	</a>
+
 	@endcan {{--fin de Usuario --}}
 </div>
