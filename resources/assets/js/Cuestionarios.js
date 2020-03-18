@@ -80,6 +80,7 @@ if($("#Preguntas").length!=0)
 		data() {
 	   	 return {
  	         todo: [],
+ 	     
  	         items:[],
  	         id :-1, 
 	     }

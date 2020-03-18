@@ -1,6 +1,7 @@
 <?php
 Route::get('/','SistemaPreguntas\CuestionariosController@ListaCustionarios');
 Route::get('/Animacion','SistemaPreguntas\CuestionariosController@Animacion');
+Route::get('jsmol/Animate','PrincipalController@Animate');
 
 Route::get('/ani','PrincipalController@index');
 

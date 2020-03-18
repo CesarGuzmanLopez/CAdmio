@@ -29,7 +29,11 @@ class PrincipalController extends Controller
     { 
     	return view('Principal')->with('title',"Cadmio");
     }
-
+    public function Animate(){
+  
+        return view('JSmol.1');
+        
+    }
     public function cerrarSesion(){
         //Desconctamos al usuario
         \Auth::logout();

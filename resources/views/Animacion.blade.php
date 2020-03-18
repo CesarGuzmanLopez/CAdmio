@@ -25,11 +25,20 @@
 	      
 	    > 
 	      <b-carousel-slide 
-	      
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
-			<iframe frameBorder="0" src="{{url('js/liteNCI2.htm')}}" width="500" height="480" ></iframe>
+
+
+			<iframe style="border: 0px;" src="{{url('Animate')}}" class="container" height="480px"></iframe>
+	      
+	      
+	      
 	      </b-carousel-slide>
-	     
+	     	   
+	  		  <b-carousel-slide caption="cohesion" img-blank img-alt="Blank image">
+               <video width="560" height="340"  autoplay loop>
+                  		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+                </video>
+	  	</b-carousel-slide>
 	         <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 	     		<div>
 	     		Las fuerzas intramoleculares mantienen juntos a los
@@ -38,7 +47,7 @@
 	     		 se refieren al enlace químico (iónico o covalente).
 	     		</div>
 	     		<b-img src="./anim/1/enlace.gif" fluid alt=" "></b-img>  
-	     </b-carousel-slide>
+</b-carousel-slide>
 	  	<b-carousel-slide caption="cohesion" img-blank img-alt="Blank image">
 	     <div>intenta poner los atomos en su lugar  <span class="tr-transform__rotatore">  </span>   para rotar</div>
 	     
@@ -120,7 +129,7 @@
 			    <input type="radio" name="preg1" value="4" /> Una gran hamburgesa<br />
 			    <input type="radio" name="preg1" value="5" /> Dinero<br />
 			    <input type="radio" name="preg1" value="6" /> todas las anteriores <br />
-			    
+
 			  </div>
 		
 	  </div>
@@ -156,59 +165,5 @@
 @endsection
 @section('scripts')
     @parent
-<script type="text/javascript">
-
-
-;(function() {
-
-// ?_USE=JAVA   ?_USE=SIGNED   ?_USE=HTML5
-
-// Developers: The _debugCode flag is checked in j2s/java/core.z.js, 
-// and, if TRUE, skips loading the core methods, forcing those
-// to be read from their individual directories. Set this
-// true if you want to do some code debugging by inserting
-// System.out.println(x), document.title=x, or alert(x) 
-// anywhere in the Java or Jmol code.
-
-var s = document.location.search;
-Jmol._debugCode = (s.indexOf("debugcode") >= 0);
-
-jmol_isReady = function(applet) {
-	document.title = (applet._id + " is ready")
-	Jmol._getElement(applet, "appletdiv").style.border="1px solid blue"
- 
-}		
-
-InfoA = {
-	width: "100%",
-	height: "100%",
-	debug: false,
-	color: "white",
-	addSelectionOptions: false,
-	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
-	use: "HTML5",
-  coverImage: "",//"data/1hxw.png",        // initial image instead of applet
-  coverScript: "",	// special script for click of cover image (otherwise equal to script)
-  deferApplet: false,                  // wait to load applet until click
-  deferUncover: false,                 // wait to uncover applet until script completed
-  jarPath: "java",
-	j2sPath: "j2s",
-	jarFile: "JmolApplet.jar",
-	isSigned: false,
-	//disableJ2SLoadMonitor: true,
-	//disableInitialConsole: true,
-	readyFunction: jmol_isReady,
-	//defaultModel: "$dopamine",
-	script: "load data/caffeine.mol;"
-}
-
-
-})();
-
-$(document).ready(function(){
-  $("#appletplace1").html(Jmol.getAppletHtml("jmol1", InfoA));
-});
-
-</script>
 @endsection
    
