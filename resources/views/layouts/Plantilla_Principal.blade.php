@@ -26,11 +26,11 @@
   
     </div> 
      @section('footer')
-   <footer class="  fixed-bottom navbar-light bg-faded">
+   <!--footer class="  fixed-bottom navbar-light bg-faded">
     <div class=" text-center py-3">© <?=date("Y") ?> Copyright:
-      <a href=" ">Cadmio</a>
+      <a href=" ">Cesar</a>
     </div>
-   </footer>
+   </footer-->
    @show
    <script type="text/javascript" src="{{asset('/js/JSmol.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".21"?>"></script>

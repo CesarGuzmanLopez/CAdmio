@@ -4,9 +4,9 @@
 
 	 
  
-<div  class="container-fluid pb-5 justify-content-center" >
+<div  class="container-fluid pb-5 justify-content-center" style="width: 1350px;">
 
-	<div id="Animacion"  class="container col-10 "> 
+	<div id="Animacion"  class="container col-10" > 
 	
 	   <div id="Presentacion" class="col-12 p-0 shadow-lg" >
 	    
@@ -52,12 +52,14 @@
 	      </div>
 	      </div>
 	   	</div>
+
 	      </b-carousel-slide> 
-	            <b-carousel-slide   img-blank img-alt="Blank image" class="bg-white text-black"  >
+	
+	     <b-carousel-slide   img-blank img-alt="Blank image" class="bg-white text-black"  >
              <div style="font-size: 20px !important; color: black !important;" >
-            	Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre moléculas y las mantienen cohesionadas.
+Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre moléculas y las mantienen cohesionadas.
     			<div class="row container-fluid justify-content-center text-center p-0 m-0" >
-    				<div class="col-8  justify-content-center text-center ">			
+    				<div class="col-9  justify-content-center text-center ">			
     				<b-img src="./anim/1/Fuerzas_inter.png" fluid></b-img>
     	    	  </div>
             	</div>
@@ -66,54 +68,72 @@
             	</div>
             </div>
 			</b-carousel-slide>
+	
+	<!-- imagen con video seguna  -->
+	      <b-carousel-slide 
+	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image" class="bg-white text-black">
+	      <div style="font-size: 20px !important; color: black !important;" >
+ En general, las fuerzas intermoleculares son más débiles que las intramoleculares; por este motivo, se necesita menos energía para evaporar un líquido o fundir un sólido que para romper los enlaces de sus moléculas. 
+
+			<div class="row container-fluid p-0 m-0" >
+		
+			<div class="col-6  justify-content-center text-center ">	
+					<b-img src="./anim/1/Puente_H.png" fluid></b-img>
+	      	</div>
+	      <div class="col-6  justify-content-center text-center">	
+      	   <video width="500"   autoplay loop>
+                  		<source src="{{url('Video/Tres_aguas_opt_plus_dinamica.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+            </video>
+            
+	      </div>
+
+	      </div>
+	      	      <p>		     	Las fuerzas intermoleculares tienen un caracter cooperativo, el cuál es clave para entender las propiedades de los compuestos; por ejemplo, se requieren 41 kJ para evaporar un mol de agua , esta cantidad de energía es explicable solamente al tomar en cuenta este efecto cooperativo.</p>
+	<p>                             Por otro lado, se requieren 930kJ de energía para romper los enlaces O-H de un mol de agua</p>
+	      
+	   	</div>
+	  </b-carousel-slide>
+	  
 	     
 	      <b-carousel-slide caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+	      <div class="container-fluid">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
-	      
+	      </div>
 	      </b-carousel-slide>
 	
 	    <b-carousel-slide 
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 
-
+<div class="container-fluid">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=600&height=500&smile=_')}}" class="container" height="580px"></iframe>
-	      
+	      </div>
 	      
 	      
 	      </b-carousel-slide>
 	    <b-carousel-slide 
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 
-
+<div class="container-fluid">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=Oc1ccc(cc1O)CCN')}}" class="container" height="480px"></iframe>
-	      
+	      </div>
 	      
 	      
 	      </b-carousel-slide>
 	    <b-carousel-slide 
 	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
-
+<div class="container-fluid">
 
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=c1c(c(cc(c1O)O)O)CCN')}}" class="container" height="480px"></iframe>
-	      
-	      
-	      
+	</div>
 	      </b-carousel-slide>
-	    <b-carousel-slide 
-	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
 
-
-			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=cc')}}" class="container" height="480px"></iframe>
-	      
-	  
-	      </b-carousel-slide>
 	
 	
 	
 	
 	     	   
-	  		  <b-carousel-slide caption="cohesion" img-blank img-alt="Blank image">
-               <video width="1024" height="480"  autoplay loop>
+	  		  <b-carousel-slide caption="Líquido iónico en un nanotubo" img-blank img-alt="Blank image">
+               <video width="750"   autoplay loop>
                   		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
                 </video>
 	  	</b-carousel-slide>
@@ -125,38 +145,13 @@
 	     		 se refieren al enlace químico (iónico o covalente).
 	     		</div>
 	     		<b-img src="./anim/1/enlace.gif" fluid alt=" "></b-img>  
-</b-carousel-slide>
-	  	<b-carousel-slide caption="cohesion" img-blank img-alt="Blank image">
-	     <div>intenta poner los atomos en su lugar  <span class="tr-transform__rotatore">  </span>   para rotar</div>
-	     
-	     <div class="wrapper">
-	    <div class="workspace" ref="workspace"> 
-		     
-		     
-		     <Transform
-	            v-for="element in elements"
-	            :key="element.id"
-	            :x="element.x"
-	            :y="element.y"
-	            :scale-x="element.scaleX"
-	            :scale-y="element.scaleY"
-	            :width="element.width"
-	            :height="element.height"
-	            :angle="element.angle"
-	            :offset-x="offsetX"
-	            :offset-y="offsetY"
-	            :disable-scale="element.disableScale === true"
-	            @update="update(element.id, $event);"
-	          >
-	            <div class="element" :style="getElementStyles(element)">
-	              	  <b-img src="./anim/1/Atomo.png" fluid alt="pregunta"> </b-img> 
-	            </div>
-	          </Transform>
-	          </div>
-	          </div>
-	      </b-carousel-slide>  
-	      <b-carousel-slide    img-src="./anim/1/tensison.png">
-   			<div class="row    recurso_preg">
+			</b-carousel-slide>
+
+
+ 
+ 		<b-carousel-slide caption="Fuerzas intramoleculares" img-src="./anim/1/tensison.png" img-alt="Blank image" >
+ 	      
+   			<div class="row recurso_preg" img-blank img-alt="Blank image">
    				<div class="col-3 col-md-2  offset-9 p-2 mt-2 "> 
    				<div class="preg"   @click="toggleModal">
 	   				<b-img src="./anim/1/pregunta.png" fluid alt="pregunta">
@@ -166,7 +161,11 @@
 				</div>
 	      </b-carousel-slide>
 	      <!-- Slides with custom text -->
+	      
 	      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54"  img-alt="Blank image">
+	     
+	     
+	     
 	     
 	      </b-carousel-slide>
 	
