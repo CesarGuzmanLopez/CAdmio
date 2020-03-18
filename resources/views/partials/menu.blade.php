@@ -14,7 +14,7 @@
 	 	<i	class="fa-fw fas fa-user nav-icon"> </i> {{ trans('cruds.user.title')}}
 	</a> 
 	@endcan {{--fin de user manager --}}
-	@endcannot('Invitado')
+	@cannot('Invitado')
 	<a href='{{ route("auth.change_password") }}'> 
 		<i	class="nav-icon fas fa-fw fa-key"> </i> Change password
 	</a>
