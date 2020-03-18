@@ -71,7 +71,7 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 	
 	<!-- imagen con video seguna  -->
 	      <b-carousel-slide 
-	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image" class="bg-white text-black">
+	      caption="Fuerzas intermoleculares" img-blank img-alt="Blank image" class="bg-white text-black">
 	      <div style="font-size: 20px !important; color: black !important;" >
  En general, las fuerzas intermoleculares son más débiles que las intramoleculares; por este motivo, se necesita menos energía para evaporar un líquido o fundir un sólido que para romper los enlaces de sus moléculas. 
 
@@ -112,7 +112,7 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 			</div>
 	      </b-carousel-slide>
 	    <b-carousel-slide 
-	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+	      caption="Fuerzas intermoleulares" img-blank img-alt="Blank image">
 
 <div class="container-fluid">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=600&height=500&smile=_')}}" class="container" height="580px"></iframe>
@@ -120,10 +120,9 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 	      
 	      
 	      </b-carousel-slide>
-	    <b-carousel-slide 
-	      caption="Fuerzas intramoleculares" img-blank img-alt="Blank image">
+	    <b-carousel-slide       caption="Fuerzas intermoleculares" img-blank img-alt="Blank image">
 
-<div class="container-fluid">
+		 <div class="container-fluid">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=Oc1ccc(cc1O)CCN')}}" class="container" height="480px"></iframe>
 	      </div>
 	      
@@ -153,7 +152,7 @@ Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre molé
 
 
  
- 		<b-carousel-slide caption="Fuerzas intramoleculares" img-src="./anim/1/tensison.png" img-alt="Blank image" >
+ 		<b-carousel-slide caption="Fuerzas intermoleculares" img-src="./anim/1/tensison.png" img-alt="Blank image" >
  	      
    			<div class="row recurso_preg" img-blank img-alt="Blank image">
    				<div class="col-3 col-md-2  offset-9 p-2 mt-2 "> 
