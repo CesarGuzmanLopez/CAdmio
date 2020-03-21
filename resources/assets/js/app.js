@@ -38,12 +38,6 @@ Vue.use(FreeTransform);
  */
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const viewer = new JSmolWidget('viewer', '<PATH_TO_JSMOL>/j2s');
-    viewer.load('<some data>')
-});
-
-
 var menu = new Vue({
     el: '#Menu'
 });
@@ -51,15 +45,8 @@ var menu = new Vue({
 
 Vue.component('Ani1', require('./components/Animacion/ani1.vue').default);
 
-
-
 if($("#AUX").length!=0)  
-app = new Vue({
-	
-    el: '#AUX'
+var app = new Vue({    el: '#AUX'
 });
-
-
-
 require('./Animacion');
 require('./Cuestionarios');

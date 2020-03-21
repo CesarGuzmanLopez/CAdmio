@@ -73,6 +73,7 @@ if($("#Animacion").length!=0)  {
 	    	prev_Presentacion(){ 
 	    		if(this.slide>0){
 	     			this.$refs.Presentacion.prev();	
+	     		
 	    		}
 	     	},
 	    	next_Presentacion(){
