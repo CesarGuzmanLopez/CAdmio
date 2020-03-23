@@ -1,8 +1,7 @@
 
 if($("#Animacion").length!=0)  {
 	app = new Vue({
-	    el: '#Animacion',
-	   
+	    el: '#Animacion', 
 	    components:{ 
 	    	'Transform':FreeTransform
 	    },

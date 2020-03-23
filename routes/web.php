@@ -9,6 +9,11 @@ Route::get('cerrarSesion','PrincipalController@cerrarSesion');
 
 Auth::routes(['register' => false]);  
 
+Route::post('/upload', 'SistemaPreguntas\CuestionariosController@upload')->name('ckeditor.upload');
+Route::get('/token','SistemaPreguntas\CuestionariosController@token');
+
+
+    
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -57,7 +62,6 @@ Route::prefix('SisPreg')->group(function () {
     Route::post('ElimnarRelacionRespuesta','SistemaPreguntas\CuestionariosController@ElimnarRelacionRespuesta');
     
     Route::post('AddRespuestaTodo','SistemaPreguntas\CuestionariosController@AddRespuestaTodo');
-    
     
     
     Route::get('CrearPresentacion','SistemaPreguntas\CuestionariosController@Crear_Cuestionario');

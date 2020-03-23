@@ -32,7 +32,10 @@
     </div>
    </footer-->
    @show
+ 
     <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".21"?>"></script>
+
+
 @yield('scripts')
    </body>
 </html>

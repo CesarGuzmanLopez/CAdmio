@@ -342,7 +342,24 @@ class CuestionariosController extends Controller{
             return asset($preg->Recurso);
         }       
         return back();        
-    }
-    
-    
+    } 
+    public function upload(Request $request)
+    { 
+        if($request->hasFile('file') && $this->authorize('Editar Cuestionarios')) { 
+            $originName = $request->file('file')->getClientOriginalName(); 
+            $fileName = pathinfo($originName, PATHINFO_FILENAME); 
+            $extension = $request->file('file')->getClientOriginalExtension(); 
+            $fileName = $fileName.'_'.time().'.'.$extension;    
+            $request->file('file')->move(public_path('images/Animacion/'), $fileName);
+            $url = './images/Animacion/'.$fileName;            
+            $msg = 'Image uploaded successfully'; 
+            $una ='{"default":"'.$url.'"}';
+            @header('Content-type: text/html; charset=utf-8');
+            return  $una;
+        } 
+     }
+    public function token(){
+        return  csrf_token();
+    }    
 }
+

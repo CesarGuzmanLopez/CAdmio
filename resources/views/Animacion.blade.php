@@ -24,16 +24,62 @@
     				<b-img src="{{url('images/preg.png')}}" fluid ></b-img>
 			  	</div>
     			<div class="col-12 text-left" >
-    				<div class="continer-fluid row m-0 p-0">
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img>
+    				<div class="continer-fluid m-0 p-0">
+    					<div class="row m-0 p-0">
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img>
+        					</div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
     					</div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-    					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+    					<form>
+    					<div class="row m-0 p-0">
+        		
+        					<div class="col">
+            					 <div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+        					</div>
+        				
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+        					</div>
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+        					</div>
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+        					
+        					</div>
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+        					</div>
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::selectRange('number', 1, 5, 0 , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>	
+            				</div>
+        					<div class="col">
+        					<div class="form-group p-0 m-0">
+            						{!!Form::select('size', array(' ' ,'L' => 'Large', 'S' => 'Small'), null , array('class' => 'form-control p-0 m-0', 'id'=>"mi_id",'required' ))!!}
+            					</div>
+        					</div> 
+    					</div>
+    					</form>
+    					{!!Form::submit('Click Me!')!!}
     				</div>
+    				
     			</div>
 			</div>
 			
