@@ -13,6 +13,9 @@ use App\preguntas;
 use App\respuestas;
 use App\preguntas_respuestas;
 use App\retro_infos;
+use App\presentaciones;
+use App\diapositivas;
+use PhpParser\Node\Stmt\Break_;
 class CuestionariosController extends Controller{    
     public function __construct()
     {   
@@ -177,10 +180,7 @@ class CuestionariosController extends Controller{
     }
     public function ObtenerRespuesta(Request $request){
         
-        if( $this->authorize('Editar Preguntas')   ){
-            $tema=Cuestionarios::where('ID_Cuestionario', '=',$request->ID_Cuestionario)->first();
-        
-        }
+   
         return back();
     }
     public function Cambiar_Respuesta(Request $request){
@@ -255,8 +255,7 @@ class CuestionariosController extends Controller{
             ->where('preguntas.ID_Pregunta','=',$request->ID_Pregunta )
             ->first();
         }
-    }
-    
+    } 
     public function GetRespuestas(Request $request){
         if($this->authorize('Usuario') && $request->has('ID_Pregunta')){
             return preguntas_respuestas::join('respuestas','respuestas.ID_Respuesta','=','preguntas_respuestas.ID_Respuesta')
@@ -269,7 +268,6 @@ class CuestionariosController extends Controller{
             $ID_Resp=-1;
    
             if($request->has('Respuesta') && $request->Respuesta!=""){
-          
                 $retro =new Respuestas();
                 $retro->Respuesta = $request->Respuesta;
                 $retro->ID_User = auth()->id();
@@ -280,16 +278,14 @@ class CuestionariosController extends Controller{
                 $vinculo = new preguntas_respuestas();
                 $vinculo->ID_Pregunta= $request->ID_Pregunta;
                 $vinculo->ID_Respuesta= $ID_Resp;
-                $vinculo->Numero= $request->Numero;
-                
+                $vinculo->Numero= $request->Numero; 
                 $vinculo->ES_Correcta =$request->Correcta;
                 $vinculo->save();
             }
         }
         
         return back();
-    }
-    
+    } 
     public function ElimnarRelacionRespuesta(Request $request){
         if($this->authorize('Editar Cuestionarios') ){
             $tema=preguntas_respuestas::where('ID_Pregunta', '=',$request->ID_Pregunta)
@@ -298,9 +294,7 @@ class CuestionariosController extends Controller{
         }
         return back();
         
-     }
-    
-    
+     } 
     public function AddPreguntaTodo(Request $request){
         if($this->authorize('Editar Cuestionarios') && $request->has('ID_Tipo_Respuesta') ){
             $ID_Retro=-1;
@@ -323,8 +317,7 @@ class CuestionariosController extends Controller{
             $vinculo->save();
        }
        return back();
-    }
-    
+    } 
     public function ElimnarRelacionPregunta(Request $request){
         if($this->authorize('Editar Cuestionarios') ){
             $tema=cuestionario_preguntas::where('ID_Cuestionario', '=',$request->ID_Cuestionario)
@@ -352,14 +345,114 @@ class CuestionariosController extends Controller{
             $fileName = $fileName.'_'.time().'.'.$extension;    
             $request->file('file')->move(public_path('images/Animacion/'), $fileName);
             $url = './images/Animacion/'.$fileName;            
-            $msg = 'Image uploaded successfully'; 
-            $una ='{"default":"'.$url.'"}';
+             $una ='{"default":"'.$url.'"}';
             @header('Content-type: text/html; charset=utf-8');
             return  $una;
         } 
      }
     public function token(){
         return  csrf_token();
-    }    
+        
+    } 
+    
+    
+    //Aqui empiezan lAs animaciones
+    public function Manage_Crud(Request $request){
+        if( $this->authorize('Editar Cuestionarios') ){
+            $Presen = presentaciones::get();
+            return view("Animaciones.Crud_Ani")->with('presentaciones',$Presen);
+        }
+        return false;
+    }
+    
+    public function addPresen(Request $request){
+        if( $this->authorize('Editar Cuestionarios') && $request->has("Nombre")){
+            $nuevoPren= new   presentaciones();
+            $nuevoPren->Nombre = $request->Nombre;
+            $nuevoPren->Descripcion =$request->Descripcion;
+        
+            $nuevoPren->save();
+             
+        }
+        return back(); 
+    }
+    public function delPren(Request $request){ 
+        if( $this->authorize('Editar Cuestionarios')&& $request->has("ID_Presentacion") && $request->ID_Presentacion!="null"){
+            $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
+            $unaDi->delete();
+        }
+        return back(); 
+    }
+    public function cambiarAni(Request $request){
+        if( $this->authorize('Editar Cuestionarios') && !$request->has("Nombre") ){
+            $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
+            return view("Animaciones.cambiarAni")->with('presentacion',$unaDi);
+        }else if($this->authorize('Editar Cuestionarios') && $request->has("Nombre")){
+            $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
+            $unaDi->Nombre = $request->Nombre;
+            $unaDi->Descripcion =$request->Descripcion;
+            $unaDi->save();
+            return redirect('./Animaciones/Manage_Crud');
+        }
+        return back();
+    }
+    
+    public function Diapositivas(Request $request){
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Presentacion")){
+            $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
+            $diapositivas=diapositivas::where("ID_Presentacion","=",$request->ID_Presentacion)->get();
+            return view("Animaciones.Diapositivas")->with('presentacion',$unaDi)->with('diapositivas',$diapositivas);
+        }
+        return back();
+    }
+    public function addDiapositiva(Request $request){//get
+        if( $this->authorize('Editar Cuestionarios') && 
+            $request->has("ID_Presentacion") &&
+            $request->has("TipoDiapo")
+            ){
+                return view("Animaciones.addDiapositiva")
+                ->with('ID_Presentacion',$request->ID_Presentacion)
+                ->with('TipoDiapo',$request->TipoDiapo)
+                ->with('Numero_De_diapositiva',$request->Numero_De_diapositiva);
+            
+        }
+            return back();
+    }
+    public  function addDiapoPost(Request $request){//post
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Presentacion")){
+            switch($request->TipoDiapo){
+                case(1):{
+                   
+                
+                    
+                    break;
+                }
+            }
+            
+            
+            
+          
+            
+            return redirect('./Animaciones/Manage_Crud/Diapositivas?ID_Presentacion='. $request->ID_Presentacion);
+        }
+        return back();
+        
+    }
+    public function cahngeDiapo(Request $request) {
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
+            
+        }
+    }
+    public function cahngeDiapoPost(Request $request) {
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
+            
+        }
+    }
+    public function eliminarDiapo(Request $request)//post
+    {
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
+            
+        }
+    }
 }
 

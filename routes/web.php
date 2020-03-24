@@ -72,8 +72,22 @@ Route::prefix('SisPreg')->group(function () {
     
     //añadir recurso
     Route::post('SubirRecurso','SistemaPreguntas\CuestionariosController@SubirRecurso');
+});
+
+Route::prefix('Animaciones/Manage_Crud')->group(function () {
+    Route::get('/','SistemaPreguntas\CuestionariosController@Manage_Crud');
+    Route::post('addPresen ','SistemaPreguntas\CuestionariosController@addPresen');
+    Route::get('delPren','SistemaPreguntas\CuestionariosController@delPren');
+    Route::get('cambiarAni','SistemaPreguntas\CuestionariosController@cambiarAni');
+    Route::get('Diapositivas','SistemaPreguntas\CuestionariosController@Diapositivas');
+    Route::get('addDiapositiva','SistemaPreguntas\CuestionariosController@addDiapositiva');
+    Route::post('addDiapoPost','SistemaPreguntas\CuestionariosController@addDiapoPost');
+    Route::get('cahngeDiapo','SistemaPreguntas\CuestionariosController@cahngeDiapo');
+    Route::post('cahngeDiapoPost','SistemaPreguntas\CuestionariosController@DcahngeDiapoPost');
+    Route::get('eliminarDiapo','SistemaPreguntas\CuestionariosController@eliminarDiapo');
     
 
 
-
 });
+
+
