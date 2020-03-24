@@ -15,6 +15,7 @@ use App\preguntas_respuestas;
 use App\retro_infos;
 use App\presentaciones;
 use App\diapositivas; 
+use test\Mockery\Stubs\Animal;
 class CuestionariosController extends Controller{    
     public function __construct()
     {   
@@ -33,7 +34,12 @@ class CuestionariosController extends Controller{
     
     public function ListaCustionarios(){
         
-        return view("ListaCuestionarios")->with("Cuestionarios",$this->ObtenerCuestionario());
+        return view("ListaCuestionarios")->with("Cuestionarios",$this->ObtenerCuestionario())
+        ->with("Presentaciones",$this->GetAni());
+    
+    }
+    public function GetAni(){
+        return presentaciones::get();
     }
     public function Animacion(Request $request){
         return view("Animacion")
@@ -655,7 +661,12 @@ class CuestionariosController extends Controller{
     }
     public function cahngeDiapoPost(Request $request) {
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
-            
+            $unaDia=diapositivas::where("ID_Dispositiva","=",$request->ID_Dispositiva)->first();
+            $unaDia->Nombre=$request->Nombre;
+            $unaDia->Texto=utf8_decode($request->Texto);
+            $unaDia->ID_Pregunta=$request->ID_Pregunta;
+            $unaDia->Numero_De_diapositiva=$request->Numero_De_diapositiva;
+            $unaDia->save();
         }
         return back();
     }
@@ -664,6 +675,15 @@ class CuestionariosController extends Controller{
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")  &&$request->ID_Dispositiva!="null" ){
             $unaDia=diapositivas::where("ID_Dispositiva","=",$request->ID_Dispositiva)->first();
             $unaDia->delete();
+        }
+        return back();
+    }
+    public function VerPresentacion(Request $request){
+        if( $this->authorize('Ver Cuestionarios') && $request->has("ID_Presentacion") ){
+            $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
+            $diapositivas=diapositivas::where("ID_Presentacion","=",$request->ID_Presentacion)->orderBy('Numero_De_diapositiva', 'ASC')->get();
+            return view("VerPresentacion")
+            ->with("Presentacion",$unaDi)->with('presentacion',$unaDi)->with('diapositivas',$diapositivas); 
         }
         return back();
     }

@@ -24,21 +24,17 @@
             	@endforeach
             </table>
 		</div>
-		<div class="col-md-4 col-12">
-			<h1>Añadir Diapositiva</h1>
+		<div class="col-md-4 col-12 bg-white">
+		<h1>Agregar diapositiva</h1>
+			<h2>Solo recurso "Imagen"  "video" "molecula 3D"</h2>
 			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=1">Solo recurso "Imagen"  "video" "molecula 3D"</a> 
-			<h1>Añadir Diapositiva</h1>
+			<h2>Texto personalizado</h2>
 			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=2">Texto personalizado</a> 
-			<h1>Añadir Diapositiva</h1>
-			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=3">Texto con recurso</a> 
-			<h1>Añadir Diapositiva</h1>
-			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=4">2 recursos</a>
-			<h1>Añadir Diapositiva</h1>
-			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=5">Texto 2 recurso</a>
-			<h1>Añadir Diapositiva</h1>
-			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=6">Recurso con Pregunta</a>
-			<h1>Añadir Diapositiva</h1>
+			<h2>Texto con recurso</h2>
+			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=3">Texto con recurso</a>
+			<h2>Solo pregunta</h2>
 			<a href="{{url('Animaciones/Manage_Crud/addDiapositiva')}}?ID_Presentacion={{$ID_Presentacion}}&Numero_De_diapositiva={{$numeroDiapo}}&TipoDiapo=7">Solo Pregunta</a>
+			
 			<form action="{{url('Animaciones/Manage_Crud/eliminarDiapo')}}" class="form bg-danger p-2 m-2 text-light">
            		@csrf	
         		<h2 class="text-white">Eliminar Diapositiva</h2>

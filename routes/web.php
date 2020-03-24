@@ -12,7 +12,7 @@ Auth::routes(['register' => false]);
 Route::post('/upload', 'SistemaPreguntas\CuestionariosController@upload')->name('ckeditor.upload');
 Route::get('/token','SistemaPreguntas\CuestionariosController@token');
 
-
+Route::get("/VerPresentacion",'SistemaPreguntas\CuestionariosController@VerPresentacion');
     
 Route::get('change_password', 'Auth\ChangePasswordController@showChangePasswordForm')->name('auth.change_password');
 Route::patch('change_password', 'Auth\ChangePasswordController@changePassword')->name('auth.change_password');
@@ -82,8 +82,8 @@ Route::prefix('Animaciones/Manage_Crud')->group(function () {
     Route::get('Diapositivas','SistemaPreguntas\CuestionariosController@Diapositivas');
     Route::get('addDiapositiva','SistemaPreguntas\CuestionariosController@addDiapositiva');
     Route::post('addDiapoPost','SistemaPreguntas\CuestionariosController@addDiapoPost');
-    Route::get('cahngeDiapo','SistemaPreguntas\CuestionariosController@cahngeDiapo');
-    Route::post('cahngeDiapoPost','SistemaPreguntas\CuestionariosController@DcahngeDiapoPost');
+    Route::get ('cahngeDiapo','SistemaPreguntas\CuestionariosController@cahngeDiapo');
+    Route::post('cahngeDiapo','SistemaPreguntas\CuestionariosController@cahngeDiapoPost');
     Route::get('eliminarDiapo','SistemaPreguntas\CuestionariosController@eliminarDiapo');
     
 });
