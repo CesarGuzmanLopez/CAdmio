@@ -416,7 +416,7 @@ class CuestionariosController extends Controller{
             $request->has("ID_Presentacion") &&
             $request->has("TipoDiapo")
             ){
-                return view("Animaciones.addDiapositiva")
+                return view("Animaciones.AddDiapositiva")
                 ->with('ID_Presentacion',$request->ID_Presentacion)
                 ->with('TipoDiapo',$request->TipoDiapo)
                 ->with('Numero_De_diapositiva',$request->Numero_De_diapositiva);
