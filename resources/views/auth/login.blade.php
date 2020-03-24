@@ -1,7 +1,7 @@
 @extends('layouts.Plantilla_Principal')
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-8 p-4">
         <div class="card-group">
             <div class="card p-4">
                 <div class="card-body">
@@ -12,7 +12,7 @@
                     @endif
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-                        <h1>Litio</h1>
+                        <h1>Talio</h1>
                         <p class="text-muted">Login</p>
 
                         <div class="input-group mb-3">

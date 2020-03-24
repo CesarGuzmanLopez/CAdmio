@@ -11,7 +11,7 @@
       <meta charset="utf-8">
       <!-- media -->
       
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}?<?=date("my")?>2">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}?<?=date("my")?>4">
         @yield('styles')  
     </head>
     <body> 
@@ -33,7 +33,7 @@
    </footer-->
    @show
  
-    <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".21"?>"></script>
+    <script type="text/javascript" src="{{asset('js/app.js') }}?<?="0.".date("my").".3"?>"></script>
 
 
 @yield('scripts')
