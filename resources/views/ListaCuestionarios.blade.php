@@ -17,6 +17,9 @@
     				Fuerzas Intermoleculares
     			</a>
     		</h3> 
+    	
+    	
+    	{{--
     		<div class="text-dark bg-white">
                 <div class="document-editor__toolbar"></div>
                 <div class="document-editor__editable-container"> 
@@ -34,6 +37,7 @@
              <textarea rows="" cols=""  class="form-control" name="Editor_imagen" v-model="DatosEditor" required="required"></textarea>
      	
 		</form>
+		--}}
     	</div>
 
 

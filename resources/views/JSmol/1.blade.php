@@ -20,7 +20,7 @@ Info = {
 //	addSelectionOptions: true,
 	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
 	@if($smile!="_")
-	script: "set zoomLarge falase; load ${{$smile}}"
+	script: "set zoomLarge falase; load {{$smile}}"
 	@else
 		script: "set zoomLarge falase; load data/1crn.pdb; cartoon on;color cartoon structure"
 	@endif

@@ -86,8 +86,6 @@ Route::prefix('Animaciones/Manage_Crud')->group(function () {
     Route::post('cahngeDiapoPost','SistemaPreguntas\CuestionariosController@DcahngeDiapoPost');
     Route::get('eliminarDiapo','SistemaPreguntas\CuestionariosController@eliminarDiapo');
     
-
-
 });
 
 

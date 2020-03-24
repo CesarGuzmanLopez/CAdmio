@@ -34,15 +34,18 @@ class PrincipalController extends Controller
         $width =100;
         $height=100;
         $color="#00000000";
+        
         $smile="cc";
         if($request->has("width"))
             $width=$request->width;
         if($request->has("height"))
             $height=$request->height;
         if($request->has("color"))
-            $color=$request->color;
-        if($request->has("smile"))
-            $smile=$request->smile;
+            $color= str_replace("#", "", $request->color);
+        if($request->has("smile")&&$request->smile!="_"&& !$request->has("isfile")  )
+            $smile="$".$request->smile;
+        else
+            $smile=$request->smile ;    
         return view('JSmol.1')->    
         with("width","$width")->with("height",$height)->with("color","$color")->with("smile","$smile");
       

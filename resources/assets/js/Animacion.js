@@ -1,4 +1,3 @@
-
 if($("#Animacion").length!=0)  {
 	app = new Vue({
 	    el: '#Animacion', 
@@ -113,6 +112,5 @@ if($("#Animacion").length!=0)  {
 		      };
 	    	}
 	    }
-	}); 
-
+	}); 	
 }

@@ -15,7 +15,41 @@
 	      @sliding-start="onSlideStart"
 	      @sliding-end="onSlideEnd" 
 		  class="bg-white" 
-	    >
+	    > 
+	    
+	             <b-carousel-slide  img-blank img-alt="Blank image" >
+                <div class="continer-fluid p-0 m-0 w-100 text-dark h-100 pt-3" style="height:500px !important; background-color:#ffee33!important; " >
+                    <p style="text-align:center;"><span class="text-huge"><strong>Una buena diapositiva</strong></span></p><figure class="table"><table><tbody><tr><td><figure class="image"><img src="/images/Animacion/1_1585075817.png"></figure></td><td><figure class="image"><img src="/images/Animacion/4_1585075825.png"></figure></td></tr></tbody></table></figure>
+                </div>
+
+                </b-carousel-slide>
+
+                
+          <b-carousel-slide  img-blank img-alt="Blank image" >
+                           <div class="continer-fluid p-0 m-0 w-100 text-dark text-left h-100 pt-3" style="height:500px !important; background-color:#ffffff!important; " >
+                <div><p>Contenido un gran contenido</p><figure class="table"><table><thead><tr><th>Esto</th><th>es una</th><th>gran tabla</th></tr></thead><tbody><tr><th>si sirve</th><td> </td><td> </td></tr><tr><th> </th><td>toddo es asi?</td><td>ewrwer</td></tr></tbody></table></figure></div>
+<div class="center-block text-center justify-content-center " >
+                        	<video width="500"     autoplay loop>
+                          		<source src="./images/Animacion/Tres_aguas_opt_plus_dinamica_1585073517.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+                        	</video>
+                        </div>
+<h3 class="text-center">Esto debe estar abajo</h3></div>
+</b-carousel-slide>
+
+	       <b-carousel-slide      img-blank  >
+			<div class="container-fluid text-dark m-0 p-0">
+				<iframe style="border: 0px;" src="./jsmol/Animate?width=1300&height=500&smile=_" class="container-fluid m-0 p-0" scrolling="no"  height="480px"></iframe>
+	      	</div> 
+	      </b-carousel-slide>
+	    <b-carousel-slide  img-blank   style="background-image:url('./images/Animacion/1crn_surf_map_1585024101.png') !important; background-blend-mode: color;background: round;" ></b-carousel-slide>
+	        	<b-carousel-slide  img-blank img-alt="Blank image">
+        	<div class="container-fluid text-dark m-0 p-0"> 
+            	<video width="1000"    loop controls>
+              		<source src="https://www.w3schools.com/html/mov_bbb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+            	</video> 
+ 	      	</div>
+ 	   </b-carousel-slide>
+	                 
  	  <!-- Pregunta de Imagen -->
 	  <b-carousel-slide  img-blank img-alt="Blank image" class="p-0">
 			  <div class="container-fluid row justify-content-center text-center text-dark">
@@ -78,11 +112,9 @@
     					</div>
     					</form>
     					{!!Form::submit('Click Me!')!!}
-    				</div>
-    				
+    				</div> 
     			</div>
-			</div>
-			
+			</div> 
 	      </b-carousel-slide>
 	
  		<b-carousel-slide  img-blank   style="background-image:url('{{url('./anim/1/tensison.png')}}') !important; background-blend-mode: color;background: round;" >
@@ -163,7 +195,15 @@
         		</div>
         			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=c1c(c(cc(c1O)O)O)CCN')}}" class="container" height="480px"></iframe>
         	</div>
-	    </b-carousel-slide> 
+	    </b-carousel-slide>
+	        <b-carousel-slide img-blank img-alt="Blank image">
+        	<div class="container-fluid text-dark">
+        		<div>
+        		"Fuerzas intermoleulares"
+        		</div>
+        			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=_')}}" class="container" height="480px"></iframe>
+        	</div>
+	    </b-carousel-slide>  
 	  	<b-carousel-slide  img-blank img-alt="Blank image">
         	<div class="container-fluid text-dark">
             	<h1>"Líquido iónico en un nanotubo"</h1>	

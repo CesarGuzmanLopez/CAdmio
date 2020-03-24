@@ -19,10 +19,17 @@ use Illuminate\Database\Eloquent\Model;
 class diapositivas extends Model
 {
     /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'ID_Dispositiva';
+
+    /**
      * @var array
      */
-    protected $fillable = ['ID_Dispositiva', 'ID_Presentacion', 'Nombre', 'updated_at', 'created_at', 'Texto', 'ID_Pregunta', 'Numero_De_diapositiva'];
-    public $incrementing = true;
+    protected $fillable = ['ID_Presentacion', 'Nombre', 'updated_at', 'created_at', 'Texto', 'ID_Pregunta', 'Numero_De_diapositiva'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -30,6 +37,7 @@ class diapositivas extends Model
     {
         return $this->belongsTo('App\Pregunta', 'ID_Pregunta', 'ID_Pregunta');
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

@@ -14,8 +14,7 @@ use App\respuestas;
 use App\preguntas_respuestas;
 use App\retro_infos;
 use App\presentaciones;
-use App\diapositivas;
-use PhpParser\Node\Stmt\Break_;
+use App\diapositivas; 
 class CuestionariosController extends Controller{    
     public function __construct()
     {   
@@ -344,7 +343,7 @@ class CuestionariosController extends Controller{
             $extension = $request->file('file')->getClientOriginalExtension(); 
             $fileName = $fileName.'_'.time().'.'.$extension;    
             $request->file('file')->move(public_path('images/Animacion/'), $fileName);
-            $url = './images/Animacion/'.$fileName;            
+            $url = '/images/Animacion/'.$fileName;            
              $una ='{"default":"'.$url.'"}';
             @header('Content-type: text/html; charset=utf-8');
             return  $una;
@@ -398,10 +397,11 @@ class CuestionariosController extends Controller{
     }
     
     public function Diapositivas(Request $request){
-        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Presentacion")){
+        if( $this->authorize('Ver Cuestionarios') && $request->has("ID_Presentacion")){
             $unaDi  = presentaciones::where("ID_Presentacion","=",$request->ID_Presentacion)->first();
-            $diapositivas=diapositivas::where("ID_Presentacion","=",$request->ID_Presentacion)->get();
-            return view("Animaciones.Diapositivas")->with('presentacion',$unaDi)->with('diapositivas',$diapositivas);
+            $diapositivas=diapositivas::where("ID_Presentacion","=",$request->ID_Presentacion)->orderBy('Numero_De_diapositiva', 'ASC')->get();
+            return view("Animaciones.Diapositivas")
+            ->with("ID_Presentacion",$request->ID_Presentacion)->with('presentacion',$unaDi)->with('diapositivas',$diapositivas);
         }
         return back();
     }
@@ -420,39 +420,252 @@ class CuestionariosController extends Controller{
     }
     public  function addDiapoPost(Request $request){//post
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Presentacion")){
+            $Diapo = new diapositivas();
+            $Diapo->ID_Presentacion= $request->ID_Presentacion;
+            $Diapo->Numero_De_diapositiva=$request->Numero_De_diapositiva;
+            $Diapo->Nombre=$request->Nombre;
+            
             switch($request->TipoDiapo){
-                case(1):{
-                   
+            case(1):{
+               
+                switch($request->tipoLocacion){
+                case("urlImage"):   
+                    if(!$request->has("urlRecurso"))return back();
+                     $Diapo->Texto ="<b-carousel-slide  img-blank   style=\"background-image:url('". $request->urlRecurso."') !important; background-blend-mode: color;background: round;\" ></b-carousel-slide>\n"; 
+                     
+                     break;
+                case("urlVideo"):{
+                    if(!$request->has("urlRecurso"))return back();
+                    $Diapo->Texto =" 
+            	  	<b-carousel-slide  img-blank img-alt=\"Blank image\">
+                    	<div class=\"container-fluid text-dark\"> 
+                        	<video width=\"1000\"    loop controls>
+                          		<source src=\"". $request->urlRecurso."\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' >
+                        	</video> 
+             	      	</div>\n
+             	   </b-carousel-slide>\n
+                    ";
+                     break;
                 
-                    
+                }
+                case ("subirImagen"):{
+                    if(!$request->hasFile("Recurso"))return back();
+                    $originName = $request->file('Recurso')->getClientOriginalName();
+                    $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                    $extension = $request->file('Recurso')->getClientOriginalExtension();
+                    $fileName = $fileName.'_'.time().'.'.$extension;
+                    $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                    $url = './images/Animacion/'.$fileName;                            
+                    $Diapo->Texto ="<b-carousel-slide  img-blank   style=\"background-image:url('". $url."') !important; background-blend-mode: color;background: round;\" ></b-carousel-slide>\n";     
                     break;
                 }
+                case ("SubirVideo"):{
+                    if(!$request->hasFile("Recurso"))return back();
+                    $originName = $request->file('Recurso')->getClientOriginalName();
+                    $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                    $extension = $request->file('Recurso')->getClientOriginalExtension();
+                    $fileName = $fileName.'_'.time().'.'.$extension;
+                    $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                    $url = './images/Animacion/'.$fileName;
+                    $Diapo->Texto ="
+            	  	<b-carousel-slide  img-blank img-alt=\"Blank image\">
+                    	<div class=\"container-fluid text-dark\">
+                        	<video width=\"1000\"    loop controls>
+                          		<source src=\"". $url."\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' >
+                        	</video>
+             	      	</div>\n
+             	   </b-carousel-slide>\n
+                    "; 
+                    break;
+                }
+                case("SubirMolecula"):{
+                    if(!$request->hasFile("Recurso"))return back();
+                    $originName = $request->file('Recurso')->getClientOriginalName();
+                    $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                    $extension = $request->file('Recurso')->getClientOriginalExtension();
+                    $fileName = $fileName.'_'.time().'.'.$extension;
+                    $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                    $url = '/images/Animacion/'.$fileName;
+                    $Diapo->Texto ="
+            	      <b-carousel-slide      img-blank  >
+            			<div class=\"container-fluid text-dark m-0 p-0\">
+            				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=1300&height=500&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+            	      	</div>\n 
+            	      </b-carousel-slide>\n
+                    ";
+                    break;
+                }
+                Case("Smile"):{
+                    if(!$request->has("Smile"))return back();
+                    $Diapo->Texto ="
+            	      <b-carousel-slide      img-blank  >
+            			<div class=\"container-fluid text-dark m-0 p-0\">
+             				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=1300&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+            	      	</div>\n
+            	      </b-carousel-slide>\n
+                    ";
+                    break;
+                }
+                default: return back();
+                }
+                break; 
             }
-            
-            
-            
+            case(2):{//solo texto
+                if(!$request->has("Texto"))return back();
+                $Diapo->Texto="
+                <b-carousel-slide  img-blank img-alt=\"Blank image\" >
+                <div class=\"continer-fluid p-0 m-0 w-100 text-dark h-100 pt-3\" style=\"height:500px !important; background-color:".$request->bgColor."!important; \" >
+                    ".$request->Texto."
+                </div>\n
+                </b-carousel-slide>\n
+                ";
+                break;
+                }
+            case(3):{
+                if(!$request->has("Texto"))return back();
+                
+                $textorecurso="";
+                switch($request->tipoLocacion){
+                    case("urlImage"):
+                        if(!$request->has("urlRecurso") || $request->urlRecurso =="" )return back();
+                        $textorecurso="<b-img src=\"".$request->urlRecurso."\" fluid></b-img>";
+                        
+                        break;
+                    case("urlVideo"):{
+                        if(!$request->has("urlRecurso") || $request->urlRecurso =="")return back();
+                        $textorecurso =" 
+                        	<video width=\"500\"     autoplay loop>
+                          		<source src=\"". $request->urlRecurso."\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' >
+                        	</video> 
+                        ";
+                        break;
+                        
+                    }
+                    case ("subirImagen"):{
+                        if(!$request->hasFile("Recurso"))return back();
+                        $originName = $request->file('Recurso')->getClientOriginalName();
+                        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                        $extension = $request->file('Recurso')->getClientOriginalExtension();
+                        $fileName = $fileName.'_'.time().'.'.$extension;
+                        $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                        $url = './images/Animacion/'.$fileName;
+                        $textorecurso="<b-img src=\"".$url."\" fluid></b-img>";
+                        break;
+                    }
+                    case ("SubirVideo"):{
+                        if(!$request->hasFile("Recurso"))return back();
+                        $originName = $request->file('Recurso')->getClientOriginalName();
+                        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                        $extension = $request->file('Recurso')->getClientOriginalExtension();
+                        $fileName = $fileName.'_'.time().'.'.$extension;
+                        $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                        $url = './images/Animacion/'.$fileName;
+                       
+                        $textorecurso ="
+                        	<video width=\"500\"     autoplay loop>
+                          		<source src=\"". $url."\" type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"' >
+                        	</video>
+                        ";
+                        break;
+                    }
+                    case("SubirMolecula"):{
+                        if(!$request->hasFile("Recurso"))return back();
+                        $originName = $request->file('Recurso')->getClientOriginalName();
+                        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                        $extension = $request->file('Recurso')->getClientOriginalExtension();
+                        $fileName = $fileName.'_'.time().'.'.$extension;
+                        $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
+                        $url = '/images/Animacion/'.$fileName;
+                       
+                        $textorecurso ="
+            				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=500&height=480&color=".str_replace("#", "",$request->bgColor)."&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+            	        ";
+                        break;
+                    }
+                    Case("Smile"):{
+                        if(!$request->has("Smile"))return back();
+                        $textorecurso ="
+             				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=500&color=".str_replace("#", "",$request->bgColor)."&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"450px\"></iframe>";       
+                        break;
+                    }
+                    default: return back();
+                }
+                $textoFinal = "
+                           <b-carousel-slide  img-blank img-alt=\"Blank image\" >
+                           <div class=\"continer-fluid p-0 m-0 w-100 text-dark text-left h-100 pt-3\" style=\"height:500px !important; background-color:".$request->bgColor."!important; \" >
+                ";
+                Switch($request->posicion){
+                    case("Arriba"):
+                        if($request->has("texto2") && $request->texto2 !="")
+                            $textoFinal.="<h3 class=\"text-center\">".$request->texto2."</h3>";
+                        $textoFinal.="<div>".$textorecurso."</div>\n";
+                        $textoFinal.="<div>".$request->Texto."</div>\n";
+                        break;
+                    case("Izquierda"):
+                        $textoFinal.="<div class=\"row\">";
+                        $textoFinal.="<div class=\"col-6 p-0 m-0 \">";
+                        $textoFinal.="<div class=\"continer-fluid\">".$textorecurso."</div>\n";
+                        $textoFinal.="</div>\n"; 
+                        $textoFinal.="<div class=\"col-6 p-0 m-0 \">";
+                        $textoFinal.="<div class=\"continer-fluid\">".$request->Texto."</div>\n";
+                        $textoFinal.="</div>\n";
+                        $textoFinal.="</div>\n";
+                        break;
+                    case("Derecha"):
+                        $textoFinal.="<div class=\"row\">";
+                        $textoFinal.="<div class=\"col-6 p-0 m-0 \">";
+                        $textoFinal.="<div class=\"continer-fluid\">".$request->Texto."</div>\n";
+                        $textoFinal.="</div>\n"; 
+                        $textoFinal.="<div class=\"col-6 p-0 m-0 \">";
+                        $textoFinal.="<div class=\"continer-fluid\">".$textorecurso."</div>\n";
+                        $textoFinal.="</div>\n";
+                        $textoFinal.="</div>\n";
+                        break;
+                    case("Abajo"):
+                        $textoFinal.="<div>".$request->Texto."</div>\n";  
+                        $textoFinal.="<div class=\"center-block text-center justify-content-center \" >".$textorecurso."</div>\n";
+                        if($request->has("texto2") && $request->texto2 !="")
+                            $textoFinal.="<h3 class=\"text-center\">".$request->texto2."</h3>";
+                        break;
+                    default: return back();
+                }
+                $textoFinal .= "</div>\n</b-carousel-slide>\n"; 
+                
+                $Diapo->Texto =utf8_decode($textoFinal); 
+                break;
+                }
+            default:
+                return back();
+            }
+            $Diapo->Texto = utf8_decode($Diapo->Texto); 
+            $Diapo->save();
           
             
             return redirect('./Animaciones/Manage_Crud/Diapositivas?ID_Presentacion='. $request->ID_Presentacion);
+                
         }
         return back();
         
     }
     public function cahngeDiapo(Request $request) {
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
-            
+            $unaDia=diapositivas::where("ID_Dispositiva","=",$request->ID_Dispositiva)->first();
+            return view("Animaciones.CambiarDiapositiva")->with("diapositiiva",$unaDia);
         }
     }
     public function cahngeDiapoPost(Request $request) {
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
             
         }
+        return back();
     }
     public function eliminarDiapo(Request $request)//post
     {
-        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
-            
+        if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")  &&$request->ID_Dispositiva!="null" ){
+            $unaDia=diapositivas::where("ID_Dispositiva","=",$request->ID_Dispositiva)->first();
+            $unaDia->delete();
         }
+        return back();
     }
 }
 

@@ -38,6 +38,7 @@ var menu = new Vue({
     el: '#Menu',
 });
 Vue.component('Ani1', require('./components/Animacion/ani1.vue').default);
+
 if($("#AUX").length!=0)  
 var app = new Vue({   
 	el: '#AUX',
