@@ -3,7 +3,7 @@
 <div class="container-fluid text-center justify-content-center ">
 <div class="bg-dark container text-light">
 	<p>Recurso = Video o Imagen o molecula // si al enviar regresa a esta pagina (No sale) quiere decir que algo salio mal revisa los campos o diselo a Cesar </p>
-<p>si subes imagenes en el <b>editor de texto</b> espera que terminen de cargar se vera una border azul arriba de la imagen que te mostrara la carga </p>
+<p>si subes imagenes en el <b>editor de texto</b> espera que terminen de cargar se vera una border azul arriba de la imagen que te mostrara la carga recuerda que el alto que tiene el marco es aproximado al alto de la diapositiva</p>
 
 	
 </div>
