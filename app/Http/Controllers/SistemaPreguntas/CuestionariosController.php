@@ -643,7 +643,7 @@ class CuestionariosController extends Controller{
             default:
                 return back();
             }
-            $Diapo->Texto = utf8_decode($Diapo->Texto); 
+            $Diapo->Texto = $Diapo->Texto; 
             $Diapo->save();
           
             
