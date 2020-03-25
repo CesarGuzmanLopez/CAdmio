@@ -397,7 +397,7 @@ class CuestionariosController extends Controller{
             $unaDi->Nombre = $request->Nombre;
             $unaDi->Descripcion =$request->Descripcion;
             $unaDi->save();
-            return redirect('./Animaciones/Manage_Crud');
+            return redirect('/Animaciones/Manage_Crud');
         }
         return back();
     }
@@ -437,7 +437,7 @@ class CuestionariosController extends Controller{
                 switch($request->tipoLocacion){
                 case("urlImage"):   
                     if(!$request->has("urlRecurso"))return back();
-                     $Diapo->Texto ="<b-carousel-slide  img-blank   style=\"background-image:url('". $request->urlRecurso."') !important; background-blend-mode: color;background: round;\" ></b-carousel-slide>\n"; 
+                     $Diapo->Texto ="<b-carousel-slide  img-blank   style=\"background-image:url('". $request->urlRecurso."') !important;background-size: cover;  background-blend-mode: color;background: round;\" ></b-carousel-slide>\n"; 
                      
                      break;
                 case("urlVideo"):{
@@ -461,8 +461,8 @@ class CuestionariosController extends Controller{
                     $extension = $request->file('Recurso')->getClientOriginalExtension();
                     $fileName = $fileName.'_'.time().'.'.$extension;
                     $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
-                    $url = './images/Animacion/'.$fileName;                            
-                    $Diapo->Texto ="<b-carousel-slide  img-blank   style=\"background-image:url('". $url."') !important; background-blend-mode: color;background: round;\" ></b-carousel-slide>\n";     
+                    $url = '/images/Animacion/'.$fileName;                            
+                    $Diapo->Texto ="<b-carousel-slide  img-blank   style=\" background-image:url('". $url."') !important; background-blend-mode: color;background-size: cover;  background: round;\" ></b-carousel-slide>\n";     
                     break;
                 }
                 case ("SubirVideo"):{
@@ -472,7 +472,7 @@ class CuestionariosController extends Controller{
                     $extension = $request->file('Recurso')->getClientOriginalExtension();
                     $fileName = $fileName.'_'.time().'.'.$extension;
                     $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
-                    $url = './images/Animacion/'.$fileName;
+                    $url = '/images/Animacion/'.$fileName;
                     $Diapo->Texto ="
             	  	<b-carousel-slide  img-blank img-alt=\"Blank image\">
                     	<div class=\"container-fluid text-dark\">
@@ -495,7 +495,7 @@ class CuestionariosController extends Controller{
                     $Diapo->Texto ="
             	      <b-carousel-slide      img-blank  >
             			<div class=\"container-fluid text-dark m-0 p-0\">
-            				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=1300&height=500&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+            				<iframe style=\"border: 0px;\" src=\"/jsmol/Animate?width=1300&height=500&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
             	      	</div>\n 
             	      </b-carousel-slide>\n
                     ";
@@ -506,7 +506,7 @@ class CuestionariosController extends Controller{
                     $Diapo->Texto ="
             	      <b-carousel-slide      img-blank  >
             			<div class=\"container-fluid text-dark m-0 p-0\">
-             				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=1300&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+             				<iframe style=\"border: 0px;\" src=\"/jsmol/Animate?width=1300&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
             	      	</div>\n
             	      </b-carousel-slide>\n
                     ";
@@ -554,7 +554,7 @@ class CuestionariosController extends Controller{
                         $extension = $request->file('Recurso')->getClientOriginalExtension();
                         $fileName = $fileName.'_'.time().'.'.$extension;
                         $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
-                        $url = './images/Animacion/'.$fileName;
+                        $url = '/images/Animacion/'.$fileName;
                         $textorecurso="<b-img src=\"".$url."\" fluid></b-img>";
                         break;
                     }
@@ -565,7 +565,7 @@ class CuestionariosController extends Controller{
                         $extension = $request->file('Recurso')->getClientOriginalExtension();
                         $fileName = $fileName.'_'.time().'.'.$extension;
                         $request->file('Recurso')->move(public_path('images/Animacion/'), $fileName);
-                        $url = './images/Animacion/'.$fileName;
+                        $url = '/images/Animacion/'.$fileName;
                        
                         $textorecurso ="
                         	<video width=\"500\"     autoplay loop>
@@ -584,14 +584,14 @@ class CuestionariosController extends Controller{
                         $url = '/images/Animacion/'.$fileName;
                        
                         $textorecurso ="
-            				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=500&height=480&color=".str_replace("#", "",$request->bgColor)."&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
+            				<iframe style=\"border: 0px;\" src=\"/jsmol/Animate?width=500&height=480&color=".str_replace("#", "",$request->bgColor)."&smile=$url&isfile=true\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"480px\"></iframe>
             	        ";
                         break;
                     }
                     Case("Smile"):{
                         if(!$request->has("Smile"))return back();
                         $textorecurso ="
-             				<iframe style=\"border: 0px;\" src=\"./jsmol/Animate?width=500&color=".str_replace("#", "",$request->bgColor)."&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"450px\"></iframe>";       
+             				<iframe style=\"border: 0px;\" src=\"/jsmol/Animate?width=500&color=".str_replace("#", "",$request->bgColor)."&height=500&smile=".$request->Smile."\" class=\"container-fluid m-0 p-0\" scrolling=\"no\"  height=\"450px\"></iframe>";       
                         break;
                     }
                     default: return back();
@@ -647,7 +647,7 @@ class CuestionariosController extends Controller{
             $Diapo->save();
           
             
-            return redirect('./Animaciones/Manage_Crud/Diapositivas?ID_Presentacion='. $request->ID_Presentacion);
+            return redirect('/Animaciones/Manage_Crud/Diapositivas?ID_Presentacion='. $request->ID_Presentacion);
                 
         }
         return back();
