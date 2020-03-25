@@ -10,6 +10,7 @@
 <form method="post" class="container" action="{{url('Animaciones/Manage_Crud/addDiapoPost')}}" enctype="multipart/form-data">
 <input type="hidden" name="ID_Presentacion" value="{{$ID_Presentacion}}">
 	@csrf
+	
 <input type="hidden" name="TipoDiapo" value="{{$TipoDiapo}}">
 <input type="hidden" name="Numero_De_diapositiva" value="{{$Numero_De_diapositiva +1}}">
 Nombre Dapositiva
