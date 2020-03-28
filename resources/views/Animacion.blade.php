@@ -63,12 +63,12 @@
 	   <b-carousel-slide  img-blank img-alt="Blank image"> 
         	<div> Fuerzas intramoleculares</div>
         	<div class="text-dark">
-        	Las fuerzas intramoleculares mantienen juntos a los
+        	<h2>Las fuerzas intramoleculares mantienen juntos a los
         	 átomos de una molécula y son responsables 
         	 de su estabilización. Las fuerzas intramoleculares 
-        	 se refieren al enlace químico (iónico o covalente).
+        	 se refieren al enlace químico (iónico o covalente).</h2>
         	</div>
-        	<b-img src="./images/intramolecular.gif" fluid alt=" " ></b-img>  
+        	<b-img src="{{url('images/intra.gif')}}" fluid alt=" " ></b-img>  
         </b-carousel-slide>
 	       <b-carousel-slide      img-blank  >
 			<div class="container-fluid text-dark m-0 p-0">
