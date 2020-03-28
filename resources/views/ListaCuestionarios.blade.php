@@ -11,7 +11,18 @@
 	</p>
 	</div> 
     	<div class="col-8 bg-dark text-white pb-4">
-    		<h1>Presentaciones interactivas </h1>    
+    		<h1>Presentaciones interactivas </h1>  
+    		
+    	  <div class="col-10">
+    		<div class="container-fluid">
+    			<h2>Proto-Animacion</h2>
+    		
+    			<h2><a class="btn btn-light" href="{{url('/Animacion')}}">Ver presentación</a></h2>
+    		</div>
+    		
+    	</div>	
+    		
+    		  
     @foreach($Presentaciones as $pren)
     	<div class="col-10">
     		<div class="container-fluid">
