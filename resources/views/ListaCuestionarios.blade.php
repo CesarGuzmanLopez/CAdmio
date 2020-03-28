@@ -20,6 +20,7 @@
     			<h2><a class="btn btn-light" href="{{url('/Animacion')}}">Ver presentación</a></h2>
     		</div>
     		
+    		
     	</div>	
     		
     		  
