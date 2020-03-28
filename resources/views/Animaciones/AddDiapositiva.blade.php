@@ -164,6 +164,10 @@ Nombre Dapositiva
     	</div>    
 	 	</div>
 	 @break
+	 @case(7)
+	 	Inserta id Pregunta <input type="number"  name="ID_Pregunta"class="form-control" required>
+	 	
+	 @break
 @endswitch 
     					<button type="submit" class="btn btn-dark">Enviar Diapositiva</button></div>
 

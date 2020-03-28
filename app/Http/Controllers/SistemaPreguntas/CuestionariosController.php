@@ -637,9 +637,15 @@ class CuestionariosController extends Controller{
                 }
                 $textoFinal .= "</div>\n</b-carousel-slide>\n"; 
                 
-                $Diapo->Texto =utf8_decode($textoFinal); 
+                $Diapo->Texto =$textoFinal; 
                 break;
                 }
+            case(7):{
+                $Diapo->ID_Pregunta = $request->ID_Pregunta;
+                
+                if($Diapo->ID_Pregunta == 1)
+                    $Diapo->Texto ="" ;
+            }
             default:
                 return back();
             }
@@ -663,7 +669,7 @@ class CuestionariosController extends Controller{
         if( $this->authorize('Editar Cuestionarios') && $request->has("ID_Dispositiva")){
             $unaDia=diapositivas::where("ID_Dispositiva","=",$request->ID_Dispositiva)->first();
             $unaDia->Nombre=$request->Nombre;
-            $unaDia->Texto=utf8_decode($request->Texto);
+            $unaDia->Texto=$request->Texto;
             $unaDia->ID_Pregunta=$request->ID_Pregunta;
             $unaDia->Numero_De_diapositiva=$request->Numero_De_diapositiva;
             $unaDia->save();

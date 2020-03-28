@@ -17,38 +17,77 @@
 		  class="bg-white" 
 	    > 
 	    
-	             <b-carousel-slide  img-blank img-alt="Blank image" >
-                <div class="continer-fluid p-0 m-0 w-100 text-dark h-100 pt-3" style="height:500px !important; background-color:#ffee33!important; " >
-                    <p style="text-align:center;"><span class="text-huge"><strong>Una buena diapositiva</strong></span></p><figure class="table"><table><tbody><tr><td><figure class="image"><img src="/images/Animacion/1_1585075817.png"></figure></td><td><figure class="image"><img src="/images/Animacion/4_1585075825.png"></figure></td></tr></tbody></table></figure>
-                </div>
 
-                </b-carousel-slide>
+     	    <b-carousel-slide  img-blank img-alt="Blank image" >
+	     	<div class="continer-fluid p-0 m-0  text-dark h-100 mt-5" style="font-size: 80px" >
+		    	<p class ="text-black"><span class="text-info" >TAL</span>leres academ<span class="text-info">I</span>c<span class="text-info">O</span>s</p>
+	     	</div>	     	
+		</b-carousel-slide>    
+          <b-carousel-slide img-blank img-alt="Blank image" class=" text-black">
+	      	<div style="font-size: 20px !important; " class=" text-dark" >
+				<h3>Fuerzas intramoleculares</h3>
+				Las fuerzas intramoleculares se refieren al enlace químico (iónico o covalente), mantienen a los átomos de una molécula juntos y son responsables de su estabilización.
+    			<div class="row container-fluid p-0 m-0" >	
+        			<div class="col-6  justify-content-center text-center ">			
+        				<iframe style="border: 0px;     overflow:hidden; " scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=O&color=ffffff')}}" class="container" height="310px"></iframe>
+        	      		La molécula de agua tiene dos enlaces covalentes.
+        	      	</div>
+        	      	<div class="col-6  justify-content-center text-center">	
+        	      		<iframe style="border: 0px;     "scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=N&color=ffffff')}}" class="container" height="310px"></iframe>
+        	      		La molécula de amoníaco (NH3) tiene tres enlaces.
+        	      	</div>
+    	      	</div>
+	   		</div> 
+	   	</b-carousel-slide> 
+ 
+	      <b-carousel-slide  img-blank   >
+	      <div style="font-size: 20px !important; " class="text-dark" >
+ En general, las fuerzas intermoleculares son más débiles que las intramoleculares; por este motivo, se necesita menos energía para evaporar un líquido o fundir un sólido que para romper los enlaces de sus moléculas. 
 
-                
-          <b-carousel-slide  img-blank img-alt="Blank image" >
-                           <div class="continer-fluid p-0 m-0 w-100 text-dark text-left h-100 pt-3" style="height:500px !important; background-color:#ffffff!important; " >
-                <div><p>Contenido un gran contenido</p><figure class="table"><table><thead><tr><th>Esto</th><th>es una</th><th>gran tabla</th></tr></thead><tbody><tr><th>si sirve</th><td> </td><td> </td></tr><tr><th> </th><td>toddo es asi?</td><td>ewrwer</td></tr></tbody></table></figure></div>
-<div class="center-block text-center justify-content-center " >
-                        	<video width="500"     autoplay loop>
-                          		<source src="./images/Animacion/Tres_aguas_opt_plus_dinamica_1585073517.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
-                        	</video>
-                        </div>
-<h3 class="text-center">Esto debe estar abajo</h3></div>
-</b-carousel-slide>
-
+			<div class="row container-fluid p-0 m-0" >
+		
+			<div class="col-6  justify-content-center text-center ">	
+					<b-img src="./anim/1/Puente_H.png" fluid></b-img>
+	      	</div>
+	      <div class="col-6  justify-content-center text-center">	
+      	   		<video width="500"   autoplay loop muted="muted">
+                  		<source src="{{url('Video/Tres_aguas_opt_plus_dinamica.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+            	</video>
+	      </div>
+	      </div>
+	      	<p> Las fuerzas intermoleculares tienen un caracter cooperativo, el cuál es clave para entender las propiedades de los compuestos; por ejemplo, se requieren 41 kJ para evaporar un mol de agua , esta cantidad de energía es explicable solamente al tomar en cuenta este efecto cooperativo.</p>
+			<p> Por otro lado, se requieren 930kJ de energía para romper los enlaces O-H de un mol de agua</p>
+	   	</div>
+	   	
+	  </b-carousel-slide>
+	   <b-carousel-slide  img-blank img-alt="Blank image"> 
+        	<div> Fuerzas intramoleculares</div>
+        	<div class="text-dark">
+        	Las fuerzas intramoleculares mantienen juntos a los
+        	 átomos de una molécula y son responsables 
+        	 de su estabilización. Las fuerzas intramoleculares 
+        	 se refieren al enlace químico (iónico o covalente).
+        	</div>
+        	<b-img src="./images/intramolecular.gif" fluid alt=" " ></b-img>  
+        </b-carousel-slide>
 	       <b-carousel-slide      img-blank  >
 			<div class="container-fluid text-dark m-0 p-0">
 				<iframe style="border: 0px;" src="./jsmol/Animate?width=1300&height=500&smile=_" class="container-fluid m-0 p-0" scrolling="no"  height="480px"></iframe>
 	      	</div> 
 	      </b-carousel-slide>
-	    <b-carousel-slide  img-blank   style="background-image:url('./images/Animacion/1crn_surf_map_1585024101.png') !important; background-blend-mode: color;background: round;" ></b-carousel-slide>
-	        	<b-carousel-slide  img-blank img-alt="Blank image">
-        	<div class="container-fluid text-dark m-0 p-0"> 
-            	<video width="1000"    loop controls>
-              		<source src="https://www.w3schools.com/html/mov_bbb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
-            	</video> 
- 	      	</div>
- 	   </b-carousel-slide>
+	       	     <b-carousel-slide   img-blank img-alt="Blank image"  >
+             <div style="font-size: 20px !important; " class="text-dark" >
+             Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre moléculas y las mantienen cohesionadas.
+    			<div class="row container-fluid justify-content-center text-center p-0 m-0" >
+    				<div class="col-9  justify-content-center text-center ">			
+    				<b-img src="./anim/1/Fuerzas_inter.png" fluid></b-img>
+    	    	  </div>
+            	</div>
+            	<div>
+            	Estas fuerzas son las principales responsables de las propiedades macroscópicas de la materia como el estado de agregación, los puntos de fusión y ebullición, la solubilidad, la tensión superficial y la densidad, entre otros.
+            	</div>
+            </div>
+			</b-carousel-slide>
 	                 
  	  <!-- Pregunta de Imagen -->
 	  <b-carousel-slide  img-blank img-alt="Blank image" class="p-0">
@@ -62,11 +101,11 @@
     					<div class="row m-0 p-0">
         					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img>
         					</div>
-        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
-        					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/dipolo_dipolo.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/dipolo-dipolo_nducido.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/ion_dipolo.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/puentes_de_hidrogeno.png')}}" fluid ></b-img></div>
+        					<div class="col"><b-img src="{{url('images/dipolo-instantaneo_dipolo-inducido.png')}}" fluid ></b-img></div>
         					<div class="col"><b-img src="{{url('images/preg.png')}}" fluid ></b-img></div>
     					</div>
     					<form>
@@ -117,72 +156,22 @@
 			</div> 
 	      </b-carousel-slide>
 	
- 		<b-carousel-slide  img-blank   style="background-image:url('{{url('./anim/1/tensison.png')}}') !important; background-blend-mode: color;background: round;" >
-   			<div class="row recurso_preg text-dark"  img-alt="Blank image"  >
-   				<div class="text-center col-12"><h1 class="text-light">"Fuerzas intermoleculares"</h1>	</div>
-   				<div class="col-3 col-md-2  offset-9 p-2 mt-2 "> 
-   				<div class="preg"   @click="toggleModal">
-	   				<b-img src="./anim/1/pregunta.png" fluid alt="pregunta">
-	   				</b-img>Pregunta </div>
-   				</div>
-			</div>
-	    </b-carousel-slide>
-	    <b-carousel-slide  img-blank img-alt="Blank image" >
-	     	<div class="continer-fluid p-0 m-0  text-dark h-100 mt-5" style="font-size: 80px" >
-		    	<p class ="text-black"><span class="text-info" >TAL</span>leres academ<span class="text-info">I</span>c<span class="text-info">O</span>s</p>
-	     	</div>	     	
-		</b-carousel-slide>
-	    <b-carousel-slide img-blank img-alt="Blank image" class=" text-black">
-	      	<div style="font-size: 20px !important; " class=" text-dark" >
-				<h3>Fuerzas intramoleculares</h3>
-				Las fuerzas intramoleculares se refieren al enlace químico (iónico o covalente), mantienen a los átomos de una molécula juntos y son responsables de su estabilización.
-    			<div class="row container-fluid p-0 m-0" >	
-        			<div class="col-6  justify-content-center text-center ">			
-        				<iframe style="border: 0px;     overflow:hidden; " scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=O&color=ffffff')}}" class="container" height="310px"></iframe>
-        	      		La molécula de agua tiene dos enlaces covalentes.
-        	      	</div>
-        	      	<div class="col-6  justify-content-center text-center">	
-        	      		<iframe style="border: 0px;     "scrolling="no" src="{{url('jsmol/Animate?width=400&height=350&smile=N&color=ffffff')}}" class="container" height="310px"></iframe>
-        	      		La molécula de amoníaco (NH3) tiene tres enlaces.
-        	      	</div>
-    	      	</div>
-	   		</div> 
-	   	</b-carousel-slide> 
 	
-	     <b-carousel-slide   img-blank img-alt="Blank image"  >
-             <div style="font-size: 20px !important; " class="text-dark" >
-             Por otro lado, las fuerzas intermoleculares son aquellas que actúan entre moléculas y las mantienen cohesionadas.
-    			<div class="row container-fluid justify-content-center text-center p-0 m-0" >
-    				<div class="col-9  justify-content-center text-center ">			
-    				<b-img src="./anim/1/Fuerzas_inter.png" fluid></b-img>
-    	    	  </div>
-            	</div>
-            	<div>
-            	Estas fuerzas son las principales responsables de las propiedades macroscópicas de la materia como el estado de agregación, los puntos de fusión y ebullición, la solubilidad, la tensión superficial y la densidad, entre otros.
-            	</div>
-            </div>
-			</b-carousel-slide>
-	<!-- imagen con video seguna  -->
-	      <b-carousel-slide  img-blank   >
-	      <div style="font-size: 20px !important; " class="text-dark" >
- En general, las fuerzas intermoleculares son más débiles que las intramoleculares; por este motivo, se necesita menos energía para evaporar un líquido o fundir un sólido que para romper los enlaces de sus moléculas. 
 
-			<div class="row container-fluid p-0 m-0" >
-		
-			<div class="col-6  justify-content-center text-center ">	
-					<b-img src="./anim/1/Puente_H.png" fluid></b-img>
-	      	</div>
-	      <div class="col-6  justify-content-center text-center">	
-      	   		<video width="500"   autoplay loop muted="muted">
-                  		<source src="{{url('Video/Tres_aguas_opt_plus_dinamica.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
-            	</video>
-	      </div>
-	      </div>
-	      	<p> Las fuerzas intermoleculares tienen un caracter cooperativo, el cuál es clave para entender las propiedades de los compuestos; por ejemplo, se requieren 41 kJ para evaporar un mol de agua , esta cantidad de energía es explicable solamente al tomar en cuenta este efecto cooperativo.</p>
-			<p> Por otro lado, se requieren 930kJ de energía para romper los enlaces O-H de un mol de agua</p>
-	   	</div>
-	  </b-carousel-slide>
+
 	
+
+	<!-- imagen con video seguna  -->
+
+	 
+	       	  	<b-carousel-slide  img-blank img-alt="Blank image">
+        	<div class="container-fluid text-dark bg-black">
+            	<h1>"Líquido iónico en un nanotubo"</h1> 
+            	<video width="750"   autoplay loop>
+              		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
+            	</video> 
+ 	      	</div>
+ 	   </b-carousel-slide>   
 	    <b-carousel-slide      img-blank  >
 		<div class="container-fluid text-dark">
 			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=Oc1ccc(cc1O)CCN')}}" class="container" height="480px"></iframe>
@@ -204,29 +193,21 @@
         			<iframe style="border: 0px;" src="{{url('jsmol/Animate?width=400&height=400&smile=_')}}" class="container" height="480px"></iframe>
         	</div>
 	    </b-carousel-slide>  
-	  	<b-carousel-slide  img-blank img-alt="Blank image">
-        	<div class="container-fluid text-dark">
-            	<h1>"Líquido iónico en un nanotubo"</h1>	
-            
-            	<video width="750"   autoplay loop>
-              		<source src="{{url('Video/Tubo.mp4')}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' >
-            	</video>
-            
- 	      	</div>
- 	   </b-carousel-slide>
+	    
+
 	  	
+	  			<b-carousel-slide  img-blank   style="background-image:url('{{url('./anim/1/tensison.png')}}') !important; background-blend-mode: color;background: round;" >
+   			<div class="row recurso_preg text-dark"  img-alt="Blank image"  >
+   				<div class="text-center col-12"><h1 class="text-light">"Fuerzas intermoleculares"</h1>	</div>
+   				<div class="col-3 col-md-2  offset-9 p-2 mt-2 "> 
+   				<div class="preg"   @click="toggleModal">
+	   				<b-img src="./anim/1/pregunta.png" fluid alt="pregunta">
+	   				</b-img>Pregunta </div>
+   				</div>
+			</div>
+	    </b-carousel-slide>
 	  	
-	  	
-        <b-carousel-slide  img-blank img-alt="Blank image"> 
-        	<div> Fuerzas intramoleculares</div>
-        	<div class="text-dark">
-        	Las fuerzas intramoleculares mantienen juntos a los
-        	 átomos de una molécula y son responsables 
-        	 de su estabilización. Las fuerzas intramoleculares 
-        	 se refieren al enlace químico (iónico o covalente).
-        	</div>
-        	<b-img src="./images/intramolecular.gif" fluid alt=" " ></b-img>  
-        </b-carousel-slide>
+       
 
 
 

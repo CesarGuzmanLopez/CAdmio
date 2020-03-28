@@ -1,8 +1,6 @@
 @extends('layouts.Plantilla_Principal')
 @section('content')
 <div class="p-4"><a href="{{url('/Animaciones/Manage_Crud/Diapositivas?ID_Presentacion=')}}{{$diapositiiva->ID_Presentacion}}" class="btn btn-white text-info border-danger">regresar Diapositivas Editor <i class="fa fa-hand-point-left"></i></a></div>
-
-
 <form action ="{{url('Animaciones/Manage_Crud/cahngeDiapo')}}" method="post" class="m-2 row text-center "  >
 @csrf
 	<div class="form-group col-4 ">
@@ -26,8 +24,4 @@
 	</div>
 	<button type="submit">Cambiar</button>
 </form>
-
-
-
-
 @endsection

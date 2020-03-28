@@ -1,7 +1,6 @@
 @extends('layouts.Plantilla_Principal')
 @section('content')
 <?php $numeroDiapo =0;
-
 ?>
 <div class="p-4"><a href="{{url('/Animaciones/Manage_Crud')}}" class="btn btn-white text-info border-danger">regresar Animaciones Editor <i class="fa fa-hand-point-left"></i></a></div>
 <div class="container-fluid m-2">

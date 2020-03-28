@@ -20,15 +20,17 @@ Info = {
 //	addSelectionOptions: true,
 	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
 	@if($smile!="_")
-	script: "set zoomLarge falase; load {{$smile}}"
+	script: "set zoomLarge falase; animation mode palindrome 1 1;animation on; load {{$smile}}"
 	@else
 		script: "set zoomLarge falase; load data/1crn.pdb; cartoon on;color cartoon structure"
 	@endif
+
 }
 
 
 $(document).ready(function() {
-  $("#mydiv").html(Jmol.getAppletHtml("jmolApplet0", Info))
+	setTimeout('plotClickCallback(null,null,item0);iamready=true;jmolScript("animation mode palindrome 1 1;animation on")',100);	
+	$("#mydiv").html(Jmol.getAppletHtml("jmolApplet0", Info))
 })
 
 
