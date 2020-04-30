@@ -44,7 +44,7 @@
         "ckeditor": "^4.12.1",
         "ckeditor4-vue": "^0.2.0",
         "ckeditor5-simple-upload": "^1.0.7",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "jquery-ui": "^1.12.1",
         "jsmol-widget": "^0.7.0",
         "miew": "^0.8.7",
